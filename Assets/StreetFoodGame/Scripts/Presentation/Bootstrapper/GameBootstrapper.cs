@@ -27,13 +27,11 @@ public class GameBootstrapper : MonoBehaviour
             return;
         }
 
-        mainMenuView.OnStartGameButtonPressed += () =>
-        {
-            mainMenuView.Hide();
-            OnGameplayLoaded();
-        };
-
-        mainMenuPresenter = new MainMenuPresenter(mainMenuView, sceneService);
+        mainMenuPresenter = new MainMenuPresenter(
+            mainMenuView,
+            sceneService,
+            OnGameplayLoaded
+        );
         mainMenuPresenter.Show();
 
         Debugger.Log("Game Bootstrapper initialized and Main Menu presented.");
@@ -49,18 +47,22 @@ public class GameBootstrapper : MonoBehaviour
                     "Gameplay",
                     () =>
                     {
-                        var gameplayView = UnityEngine.Object.FindObjectOfType<GameplayView>();
-                        if (gameplayView == null)
+                        var ctx = FindObjectOfType<GameplaySceneContext>();
+                        if (ctx == null)
                         {
-                            Debugger.LogError("GameplayView not found in the scene.");
+                            Debugger.LogError("GameplaySceneContext not found in the scene.");
                             return;
                         }
 
-                        var gameplayPresenter = new GameplayPresenter(gameplayView, sceneService);
+                        var gameplayPresenter = new GameplayPresenter(
+                            ctx.gameplayView,
+                            ctx.cookingView,
+                            sceneService
+                        );
+                        
                         gameplayPresenter.StartGameplay();
                     }
                 );
-
             }
         );
     }

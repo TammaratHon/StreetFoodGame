@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/StreetFoodGame/Scenes/demo.unity
+    path: Assets/StreetFoodGame/Scenes/Bootstrapper.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/StreetFoodGame/Scenes/MainMenu.unity
+    guid: b0ae491a6391e964abef5585933919c6
+  - enabled: 1
+    path: Assets/StreetFoodGame/Scenes/Gameplay.unity
+    guid: 25b150d1007200242afab4aaa2e02d5e
   m_configObjects: {}

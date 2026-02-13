@@ -1,12 +1,16 @@
+using System;
+
 public class MainMenuPresenter
 {
     private readonly IMainMenuView view;
     private readonly ISceneService sceneService;
+    private readonly Action onGameStarted;
 
-    public MainMenuPresenter(IMainMenuView view, ISceneService sceneService)
+    public MainMenuPresenter(IMainMenuView view, ISceneService sceneService, Action onGameStarted)
     {
         this.view = view;
         this.sceneService = sceneService;
+        this.onGameStarted = onGameStarted;
 
         view.OnStartGameButtonPressed += HandleStartGameButtonPressed;
         view.OnOptionsButtonPressed += HandleOptionsButtonPressed;
@@ -21,13 +25,7 @@ public class MainMenuPresenter
     private void HandleStartGameButtonPressed()
     {
         view.Hide();
-        sceneService.UnloadScene(
-            "MainMenu",
-            () =>
-            {
-                Dispose();
-            }
-        );
+        onGameStarted.Invoke();
     }
 
     private void HandleOptionsButtonPressed()
