@@ -1,26 +1,41 @@
 public class GameplayPresenter
 {
-    private readonly IGameplayView _view;
-    private readonly ICookingView _cookingView;
-    private readonly ISceneService _sceneService;
+    private readonly IGameplayView view;
+    private readonly ICookingView cookingView;
+    private readonly ISceneService sceneService;
 
-    public GameplayPresenter(IGameplayView view, ICookingView cookingView, ISceneService sceneService)
+    private readonly IOrderFactory orderFactory;
+    private readonly OrderQueueManager orderQueueManager;
+
+    public GameplayPresenter(
+        IGameplayView view,
+        ICookingView cookingView,
+        ISceneService sceneService,
+        IOrderFactory orderFactory,
+        OrderQueueManager orderQueueManager
+    )
     {
-        _view = view;
-        _cookingView = cookingView;
-        _sceneService = sceneService;
+        this.view = view;
+        this.cookingView = cookingView;
+        this.sceneService = sceneService;
+        this.orderFactory = orderFactory;
+        this.orderQueueManager = orderQueueManager;
     }
 
     public void StartGameplay()
     {
+        CreateInitialOrders();
+
         // Additional logic to initialize gameplay can be added here.
-        _view.Show();
-        _cookingView.Show();
+        view.Show();
+        cookingView.Show();
+
+        LogCurrentOrders();
     }
 
     public void EndGameplay()
     {
-        _sceneService.UnloadScene(
+        sceneService.UnloadScene(
             "Gameplay",
             OnGameplaySceneUnloaded
         );
@@ -29,5 +44,31 @@ public class GameplayPresenter
     private void OnGameplaySceneUnloaded()
     {
         // Additional logic after the gameplay scene is unloaded can be added here.
+    }
+
+    private void CreateInitialOrders()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            Order order = orderFactory.CreateOrder();
+            orderQueueManager.EnqueueOrder(order);
+        }
+    }
+
+    private void LogCurrentOrders()
+    {
+        foreach (var o in orderQueueManager.GetCurrentOrders())
+        {
+            Debugger.Log($"Current order: {o.Recipe.Name} for {o.Customer.Name}");
+            for(int i = 0; i < o.Recipe.IngredientsByStep.Count; i++)
+            {
+                var step = o.Recipe.IngredientsByStep[i];
+                for(int j = 0; j < step.ingredients.Count; j++)
+                {
+                    var ingredient = step.ingredients[j];
+                    Debugger.Log($"Step {i + 1}, Ingredient {j + 1}: {ingredient.Name}");
+                }
+            }
+        }
     }
 }

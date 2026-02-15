@@ -44,3 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7607b250657c3a84c899316c555da2f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recipeDataSOList:
+  - {fileID: 11400000, guid: 275b9ae58203e40469e3f093668e1c26, type: 2}
+  - {fileID: 11400000, guid: ea430827485b9e14c8d7da4c6138c19c, type: 2}
+  - {fileID: 11400000, guid: 49dfe94867cc2a64799407def3ea6e22, type: 2}
+  customerDataSOList:
+  - {fileID: 11400000, guid: 2545d37389fcfe34e81b7ebc96f97fc6, type: 2}
+  - {fileID: 11400000, guid: fc123b22b910f3e4381cd9872000ba4b, type: 2}

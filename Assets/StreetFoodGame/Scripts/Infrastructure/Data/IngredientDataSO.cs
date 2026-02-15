@@ -1,0 +1,8 @@
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "IngredientData", menuName = "StreetFoodGame/IngredientData")]
+public class IngredientDataSO : ScriptableObject
+{
+    public string ingredientName;
+    public Sprite ingredientSprite;
+}

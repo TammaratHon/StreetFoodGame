@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameBootstrapper : MonoBehaviour
@@ -7,6 +8,10 @@ public class GameBootstrapper : MonoBehaviour
 
     // Presenters
     private MainMenuPresenter mainMenuPresenter;
+
+    // Repositories (can be used by presenters or other services)
+    [SerializeField] private List<RecipeDataSO> recipeDataSOList;
+    [SerializeField] private List<CustomerDataSO> customerDataSOList;
 
     private void Start()
     {
@@ -30,7 +35,15 @@ public class GameBootstrapper : MonoBehaviour
         mainMenuPresenter = new MainMenuPresenter(
             mainMenuView,
             sceneService,
-            OnGameplayLoaded
+            () => {
+                sceneService.UnloadScene(
+                    "MainMenu",
+                    () => sceneService.LoadSceneAdditive(
+                        "Gameplay",
+                        () => OnGameplayLoaded()
+                    )
+                );
+            }
         );
         mainMenuPresenter.Show();
 
@@ -39,31 +52,29 @@ public class GameBootstrapper : MonoBehaviour
 
     private void OnGameplayLoaded()
     {
-        sceneService.UnloadScene(
-            "MainMenu",
-            () =>
-            {
-                sceneService.LoadSceneAdditive(
-                    "Gameplay",
-                    () =>
-                    {
-                        var ctx = FindObjectOfType<GameplaySceneContext>();
-                        if (ctx == null)
-                        {
-                            Debugger.LogError("GameplaySceneContext not found in the scene.");
-                            return;
-                        }
+        // Find the GameplaySceneContext in the loaded scene to access its views and other components.
+        var ctx = FindObjectOfType<GameplaySceneContext>();
+        if (ctx == null)
+        {
+            Debugger.LogError("GameplaySceneContext not found in the scene.");
+            return;
+        }
 
-                        var gameplayPresenter = new GameplayPresenter(
-                            ctx.gameplayView,
-                            ctx.cookingView,
-                            sceneService
-                        );
-                        
-                        gameplayPresenter.StartGameplay();
-                    }
-                );
-            }
+        // Initialize repositories with data from ScriptableObjects
+        var recipeRepository = new RecipeRepository(recipeDataSOList);
+        var customerRepository = new CustomerRepository(customerDataSOList);
+        var orderFactory = new OrderFactory(recipeRepository, customerRepository);
+        var orderQueueManager = new OrderQueueManager();
+
+        // Create the GameplayPresenter and wire everything together
+        var gameplayPresenter = new GameplayPresenter(
+            ctx.gameplayView,
+            ctx.cookingView,
+            sceneService,
+            orderFactory,
+            orderQueueManager
         );
+        
+        gameplayPresenter.StartGameplay();
     }
 }

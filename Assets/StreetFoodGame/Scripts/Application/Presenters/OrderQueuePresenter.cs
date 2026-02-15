@@ -1,0 +1,23 @@
+public class OrderQueuePresenter
+{
+    private readonly IOrderQueueView orderQueueView;
+    private readonly OrderQueueManager orderQueueManager;
+
+    public OrderQueuePresenter(IOrderQueueView orderQueueView, OrderQueueManager orderQueueManager)
+    {
+        this.orderQueueView = orderQueueView;
+        this.orderQueueManager = orderQueueManager;
+    }
+
+    public void AddOrderToQueue(Order order)
+    {
+        orderQueueManager.EnqueueOrder(order);
+        orderQueueView.AddOrder(order.Customer);
+    }
+
+    public void RemoveOrderFromQueue(Order order)
+    {
+        orderQueueManager.RemoveOrder(order);
+        orderQueueView.RemoveOrder(order.Customer);
+    }
+}
