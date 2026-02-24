@@ -1,13 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Utilities;
+
 using StreetFoodGame.Application.Presenters;
 using StreetFoodGame.Application.Interfaces;
+using StreetFoodGame.Application.Services;
+using StreetFoodGame.Application.Usecases;
+
 using StreetFoodGame.Infrastructure.Data;
 using StreetFoodGame.Infrastructure.Services;
 using StreetFoodGame.Infrastructure.Repositories;
 using StreetFoodGame.Infrastructure.Factories;
-using StreetFoodGame.Application.Services;
+
 using StreetFoodGame.Presentation.Views;
 using StreetFoodGame.Presentation.Context;
 
@@ -83,18 +87,25 @@ namespace StreetFoodGame.Presentation.Bootstrapper
             var orderQueueManager = new OrderQueueManager();
             var resourceSpriteProvider = new ResourceSpriteProvider();
 
-            // Create the GameplayPresenter and wire everything together
-            var gameplayPresenter = new GameplayPresenter(
-                ctx.GameplayView,
-                // ctx.cookingView,
-                sceneService,
+            var receiveOrderUseCase = new ReceiveOrderUseCase(
                 orderFactory,
                 orderQueueManager
             );
 
+            var startGameUseCase = new StartGameUseCase(receiveOrderUseCase);
+            var selectIngredientUseCase = new SelectIngredientUseCase();
+
+            // Create the GameplayPresenter and wire everything together
+            var gameplayPresenter = new GameplayPresenter(
+                ctx.GameplayView,
+                sceneService,
+                startGameUseCase
+            );
+
             var cookingPresenter = new CookingPresenter(
                 ctx.CookingView,
-                resourceSpriteProvider
+                resourceSpriteProvider,
+                selectIngredientUseCase
             );
 
             gameplayPresenter.StartGameplay();

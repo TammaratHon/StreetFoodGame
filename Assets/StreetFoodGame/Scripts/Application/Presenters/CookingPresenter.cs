@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using StreetFoodGame.Application.Interfaces;
+using StreetFoodGame.Application.Usecases;
 using Utilities;
 
 namespace StreetFoodGame.Application.Presenters
@@ -8,16 +8,17 @@ namespace StreetFoodGame.Application.Presenters
     {
         private readonly ICookingView view;
         private readonly ISpriteProviderService spriteProviderService;
-
-        private HashSet<string> selectedIngredients = new HashSet<string>();
+        private readonly SelectIngredientUseCase selectIngredientUseCase;
 
         public CookingPresenter(
             ICookingView view,
-            ISpriteProviderService spriteProviderService
+            ISpriteProviderService spriteProviderService,
+            SelectIngredientUseCase selectIngredientUseCase
         )
         {
             this.view = view;
             this.spriteProviderService = spriteProviderService;
+            this.selectIngredientUseCase = selectIngredientUseCase;
 
             view.OnIngredientButtonPressed += HandleIngredientButtonPressed;
         }
@@ -29,23 +30,21 @@ namespace StreetFoodGame.Application.Presenters
 
         private void HandleIngredientButtonPressed(string ingredientKey)
         {
-            Debugger.Log($"Ingredient button pressed: {ingredientKey}");
+            selectIngredientUseCase.Select(ingredientKey);
 
-            if (selectedIngredients.Contains(ingredientKey))
+            if(selectIngredientUseCase.IsSelected(ingredientKey))
             {
-                Debugger.Log($"Ingredient {ingredientKey} already selected");
-                selectedIngredients.Remove(ingredientKey);
-                view.HideCookingIngredientImage(ingredientKey);
-                return;
+                Debugger.Log($"Ingredient {ingredientKey} selected");
+                view.ShowCookingIngredientImage(
+                    ingredientKey,
+                    spriteProviderService.LoadSprite(ingredientKey)
+                );
             }
-
-            selectedIngredients.Add(ingredientKey);
-            view.ShowCookingIngredientImage(
-                ingredientKey,
-                spriteProviderService.LoadSprite(ingredientKey)
-            );
-
-            // Additional logic to handle the ingredient button press can be added here.
+            else
+            {
+                Debugger.Log($"Ingredient {ingredientKey} deselected");
+                view.HideCookingIngredientImage(ingredientKey);
+            }
         }
 
         private void Dispose()
