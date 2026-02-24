@@ -1,10 +1,11 @@
+using System;
 using StreetFoodGame.Application.Interfaces;
 using StreetFoodGame.Application.Usecases;
 using Utilities;
 
 namespace StreetFoodGame.Application.Presenters
 {
-    public class CookingPresenter
+    public class CookingPresenter : IDisposable
     {
         private readonly ICookingView view;
         private readonly ISpriteProviderService spriteProviderService;
@@ -47,7 +48,7 @@ namespace StreetFoodGame.Application.Presenters
             }
         }
 
-        private void Dispose()
+        public void Dispose()
         {
             view.OnIngredientButtonPressed -= HandleIngredientButtonPressed;
         }

@@ -58,10 +58,15 @@ namespace StreetFoodGame.Presentation.Bootstrapper
                 {
                     sceneService.UnloadScene(
                         "MainMenu",
-                        () => sceneService.LoadSceneAdditive(
-                            "Gameplay",
-                            () => OnGameplayLoaded()
-                        )
+                        () =>
+                        {
+                            mainMenuPresenter.Dispose();
+                            
+                            sceneService.LoadSceneAdditive(
+                                "Gameplay",
+                                () => OnGameplayLoaded()
+                            );
+                        }
                     );
                 }
             );

@@ -1,10 +1,11 @@
+using System;
 using StreetFoodGame.Application.Interfaces;
 using StreetFoodGame.Application.Services;
 using StreetFoodGame.Domain.Entities;
 
 namespace StreetFoodGame.Application.Presenters
 {
-    public class OrderQueuePresenter
+    public class OrderQueuePresenter : IDisposable
     {
         private readonly IOrderQueueView orderQueueView;
         private readonly OrderQueueManager orderQueueManager;
@@ -25,6 +26,11 @@ namespace StreetFoodGame.Application.Presenters
         {
             orderQueueManager.RemoveOrder(order);
             orderQueueView.RemoveOrder(order.Customer);
+        }
+
+        public void Dispose()
+        {
+            
         }
     }
 }

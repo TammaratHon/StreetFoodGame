@@ -3,7 +3,7 @@ using StreetFoodGame.Application.Interfaces;
 
 namespace StreetFoodGame.Application.Presenters
 {
-    public class MainMenuPresenter
+    public class MainMenuPresenter : IDisposable
     {
         private readonly IMainMenuView view;
         private readonly ISceneService sceneService;
@@ -48,7 +48,7 @@ namespace StreetFoodGame.Application.Presenters
             applicationService.Quit();
         }
 
-        private void Dispose()
+        public void Dispose()
         {
             view.OnStartGameButtonPressed -= HandleStartGameButtonPressed;
             view.OnOptionsButtonPressed -= HandleOptionsButtonPressed;

@@ -1,10 +1,11 @@
+using System;
 using StreetFoodGame.Application.Interfaces;
 using StreetFoodGame.Application.Usecases;
 using Utilities;
 
 namespace StreetFoodGame.Application.Presenters
 {
-    public class GameplayPresenter
+    public class GameplayPresenter : IDisposable
     {
         private readonly IGameplayView view;
         private readonly ISceneService sceneService;
@@ -41,6 +42,7 @@ namespace StreetFoodGame.Application.Presenters
 
         private void OnGameplaySceneUnloaded()
         {
+            Dispose();
             // Additional logic after the gameplay scene is unloaded can be added here.
         }
 
@@ -50,7 +52,7 @@ namespace StreetFoodGame.Application.Presenters
             // Additional logic to handle the option button press can be added here.
         }
 
-        private void Dispose()
+        public void Dispose()
         {
             view.OnOptionButtonPressed -= HandleOptionButtonPressed;
         }
