@@ -1,9 +1,12 @@
-public class Ingredient
+namespace StreetFoodGame.Domain.Entities
 {
-    public string Name { get; private set; }
-
-    public Ingredient(string name)
+    public class Ingredient
     {
-        Name = name;
+        public string Name { get; private set; }
+
+        public Ingredient(string name)
+        {
+            Name = name;
+        }
     }
 }

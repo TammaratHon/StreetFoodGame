@@ -1,23 +1,26 @@
-public static class Debugger
+namespace Utilities
 {
-    public static void Log(string message)
+    public static class Debugger
     {
-        #if DEBUG_ENABLED
-        UnityEngine.Debug.Log(message);
-        #endif
-    }
+        public static void Log(string message)
+        {
+#if DEBUG_ENABLED
+            UnityEngine.Debug.Log(message);
+#endif
+        }
 
-    public static void LogWarning(string message)
-    {
-        #if DEBUG_ENABLED
-        UnityEngine.Debug.LogWarning(message);
-        #endif
-    }
+        public static void LogWarning(string message)
+        {
+#if DEBUG_ENABLED
+            UnityEngine.Debug.LogWarning(message);
+#endif
+        }
 
-    public static void LogError(string message)
-    {
-        #if DEBUG_ENABLED
-        UnityEngine.Debug.LogError(message);
-        #endif
+        public static void LogError(string message)
+        {
+#if DEBUG_ENABLED
+            UnityEngine.Debug.LogError(message);
+#endif
+        }
     }
 }

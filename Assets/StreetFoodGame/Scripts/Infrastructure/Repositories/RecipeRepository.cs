@@ -1,54 +1,60 @@
 using System;
 using System.Collections.Generic;
+using StreetFoodGame.Domain.Interfaces;
+using StreetFoodGame.Domain.Entities;
+using StreetFoodGame.Infrastructure.Data;
 
-public class RecipeRepository : IRecipeRepository
+namespace StreetFoodGame.Infrastructure.Repositories
 {
-    private readonly List<Recipe> recipeDataList;
-
-    public RecipeRepository(List<RecipeDataSO> recipeDataList)
+    public class RecipeRepository : IRecipeRepository
     {
-        this.recipeDataList = new List<Recipe>();
-        foreach (var data in recipeDataList)
+        private readonly List<Recipe> recipeDataList;
+
+        public RecipeRepository(List<RecipeDataSO> recipeDataList)
         {
-            var recipe = ConvertToRecipe(data);
-            this.recipeDataList.Add(recipe);
-        }
-    }
-
-    public List<Recipe> GetAllRecipes()
-    {
-        return recipeDataList;
-    }
-
-    public Recipe GetRandomRecipe()
-    {
-        if(recipeDataList.Count == 0)
-        {
-            throw new System.InvalidOperationException("No recipes available in the repository.");
-        }
-
-        Random random = new Random();
-        int randomIndex = random.Next(recipeDataList.Count);
-        return recipeDataList[randomIndex];
-    }
-
-    public Recipe GetRecipeByFoodItemName(string foodItemName)
-    {
-        return recipeDataList.Find(recipe => recipe.Name == foodItemName);
-    }
-
-    private Recipe ConvertToRecipe(RecipeDataSO data)
-    {
-        List<IngredientByStep> ingredientBySteps = new List<IngredientByStep>();
-        foreach (var step in data.ingredientBySteps)
-        {
-            List<Ingredient> ingredients = new List<Ingredient>();
-            foreach (var ingredientData in step.ingredients)
+            this.recipeDataList = new List<Recipe>();
+            foreach (var data in recipeDataList)
             {
-                ingredients.Add(new Ingredient(ingredientData.ingredientName));
+                var recipe = ConvertToRecipe(data);
+                this.recipeDataList.Add(recipe);
             }
-            ingredientBySteps.Add(new IngredientByStep(ingredients));
         }
-        return new Recipe(data.foodItemName, ingredientBySteps);
+
+        public List<Recipe> GetAllRecipes()
+        {
+            return recipeDataList;
+        }
+
+        public Recipe GetRandomRecipe()
+        {
+            if (recipeDataList.Count == 0)
+            {
+                throw new System.InvalidOperationException("No recipes available in the repository.");
+            }
+
+            Random random = new Random();
+            int randomIndex = random.Next(recipeDataList.Count);
+            return recipeDataList[randomIndex];
+        }
+
+        public Recipe GetRecipeByFoodItemName(string foodItemName)
+        {
+            return recipeDataList.Find(recipe => recipe.Name == foodItemName);
+        }
+
+        private Recipe ConvertToRecipe(RecipeDataSO data)
+        {
+            List<IngredientByStep> ingredientBySteps = new List<IngredientByStep>();
+            foreach (var step in data.ingredientBySteps)
+            {
+                List<Ingredient> ingredients = new List<Ingredient>();
+                foreach (var ingredientData in step.ingredients)
+                {
+                    ingredients.Add(new Ingredient(ingredientData.ingredientName));
+                }
+                ingredientBySteps.Add(new IngredientByStep(ingredients));
+            }
+            return new Recipe(data.foodItemName, ingredientBySteps);
+        }
     }
 }

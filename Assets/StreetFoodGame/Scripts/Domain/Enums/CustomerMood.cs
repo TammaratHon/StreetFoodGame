@@ -1,7 +1,10 @@
-public enum CustomerMood
+namespace StreetFoodGame.Domain.Enums
 {
-    Happy,
-    Neutral,
-    Impatient,
-    Angry
+    public enum CustomerMood
+    {
+        Happy,
+        Neutral,
+        Impatient,
+        Angry
+    }
 }

@@ -1,8 +1,12 @@
 using System.Collections.Generic;
+using StreetFoodGame.Domain.Entities;
 
-public interface ICustomerRepository
+namespace StreetFoodGame.Domain.Interfaces
 {
-    Customer GetCustomerByName(string customerName);
-    Customer GetRandomCustomer();
-    List<Customer> GetAllCustomers();
+    public interface ICustomerRepository
+    {
+        Customer GetCustomerByName(string customerName);
+        Customer GetRandomCustomer();
+        List<Customer> GetAllCustomers();
+    }
 }

@@ -1,4 +1,9 @@
-public interface IOrderFactory
+using StreetFoodGame.Domain.Entities;
+
+namespace StreetFoodGame.Domain.Interfaces
 {
-    Order CreateOrder();
+    public interface IOrderFactory
+    {
+        Order CreateOrder();
+    }
 }

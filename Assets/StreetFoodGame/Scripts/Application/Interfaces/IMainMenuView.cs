@@ -1,8 +1,11 @@
 using System;
 
-public interface IMainMenuView : IView
+namespace StreetFoodGame.Application.Interfaces
 {
-    event Action OnStartGameButtonPressed;
-    event Action OnOptionsButtonPressed;
-    event Action OnExitButtonPressed;
+    public interface IMainMenuView : IView
+    {
+        event Action OnStartGameButtonPressed;
+        event Action OnOptionsButtonPressed;
+        event Action OnExitButtonPressed;
+    }
 }

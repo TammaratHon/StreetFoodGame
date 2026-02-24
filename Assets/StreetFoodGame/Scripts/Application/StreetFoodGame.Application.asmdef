@@ -1,0 +1,17 @@
+{
+    "name": "StreetFoodGame.Application",
+    "rootNamespace": "",
+    "references": [
+        "GUID:084d89a931ba92f48945fe852733e4cd",
+        "GUID:0f71a7c4ae792ca43a48212bdb66e64a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,8 +1,12 @@
 using System.Collections.Generic;
+using StreetFoodGame.Domain.Entities;
 
-public interface IRecipeRepository
+namespace StreetFoodGame.Domain.Interfaces
 {
-    Recipe GetRecipeByFoodItemName(string foodItemName);
-    Recipe GetRandomRecipe();
-    List<Recipe> GetAllRecipes();
+    public interface IRecipeRepository
+    {
+        Recipe GetRecipeByFoodItemName(string foodItemName);
+        Recipe GetRandomRecipe();
+        List<Recipe> GetAllRecipes();
+    }
 }

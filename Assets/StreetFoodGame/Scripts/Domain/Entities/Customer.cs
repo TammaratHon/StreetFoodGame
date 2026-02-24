@@ -1,11 +1,16 @@
-public class Customer
-{
-    public string Name { get; private set; }
-    public CustomerMood Mood { get; set; }
+using StreetFoodGame.Domain.Enums;
 
-    public Customer(string name, CustomerMood mood = CustomerMood.Happy)
+namespace StreetFoodGame.Domain.Entities
+{
+    public class Customer
     {
-        Name = name;
-        Mood = mood;
+        public string Name { get; private set; }
+        public CustomerMood Mood { get; set; }
+
+        public Customer(string name, CustomerMood mood = CustomerMood.Happy)
+        {
+            Name = name;
+            Mood = mood;
+        }
     }
 }

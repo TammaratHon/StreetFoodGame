@@ -1,52 +1,57 @@
 using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Button))]
-public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+namespace StreetFoodGame.Presentation.Components
 {
-    [SerializeField] private Image ingredientImage;
-    [SerializeField] private Image highlightImage;
-
-    private Button button;
-    private Action onClickAction;
-
-    private void Awake()
+    [RequireComponent(typeof(Button))]
+    public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
-        button = GetComponent<Button>();
-        button.onClick.AddListener(OnButtonClick);
+        [SerializeField] private string key;
+        [SerializeField] private Image ingredientImage;
+        [SerializeField] private Image highlightImage;
 
-        ingredientImage.gameObject.SetActive(true);
-        highlightImage.gameObject.SetActive(false);
-    }
+        public string Key => key;
 
-    public void Initialize(Action onClick)
-    {
-        onClickAction = onClick;
-    }
+        private Button button;
+        private Action onClickAction;
 
-    private void OnButtonClick()
-    {
-        onClickAction?.Invoke();
-    }
+        private void Awake()
+        {
+            button = GetComponent<Button>();
+            button.onClick.AddListener(OnButtonClick);
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        Color alpha = ingredientImage.color;
-        alpha.a = 0f;
-        ingredientImage.color = alpha;
+            ingredientImage.gameObject.SetActive(true);
+            highlightImage.gameObject.SetActive(false);
+        }
 
-        highlightImage.gameObject.SetActive(true);
-    }
+        public void Initialize(Action onClick)
+        {
+            onClickAction = onClick;
+        }
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        Color alpha = ingredientImage.color;
-        alpha.a = 1f;
-        ingredientImage.color = alpha;
+        private void OnButtonClick()
+        {
+            onClickAction?.Invoke();
+        }
 
-        highlightImage.gameObject.SetActive(false);
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            Color alpha = ingredientImage.color;
+            alpha.a = 0f;
+            ingredientImage.color = alpha;
+
+            highlightImage.gameObject.SetActive(true);
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            Color alpha = ingredientImage.color;
+            alpha.a = 1f;
+            ingredientImage.color = alpha;
+
+            highlightImage.gameObject.SetActive(false);
+        }
     }
 }

@@ -1,0 +1,17 @@
+{
+    "name": "StreetFoodGame.Infastructure",
+    "rootNamespace": "",
+    "references": [
+        "GUID:084d89a931ba92f48945fe852733e4cd",
+        "GUID:2870133789679254e95c22907bdbdf16"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

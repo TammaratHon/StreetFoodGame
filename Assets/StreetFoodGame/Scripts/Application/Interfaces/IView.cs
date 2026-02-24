@@ -1,5 +1,8 @@
-public interface IView
+namespace StreetFoodGame.Application.Interfaces
 {
-    void Show();
-    void Hide();
+    public interface IView
+    {
+        void Show();
+        void Hide();
+    }
 }

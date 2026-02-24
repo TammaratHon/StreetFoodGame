@@ -2032,110 +2032,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 261323119626106571, guid: f21c7916be7c2fb409bf23aae7df4519,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 291162556962915025, guid: f21c7916be7c2fb409bf23aae7df4519,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 942337281232218878, guid: f21c7916be7c2fb409bf23aae7df4519,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1107101301235863559, guid: f21c7916be7c2fb409bf23aae7df4519,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1293694851349617049, guid: f21c7916be7c2fb409bf23aae7df4519,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2810055775739889059, guid: f21c7916be7c2fb409bf23aae7df4519,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3584445751982161553, guid: f21c7916be7c2fb409bf23aae7df4519,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4085427736028728868, guid: f21c7916be7c2fb409bf23aae7df4519,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4385666337038155935, guid: f21c7916be7c2fb409bf23aae7df4519,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4837906599278586659, guid: f21c7916be7c2fb409bf23aae7df4519,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915371760579715783, guid: f21c7916be7c2fb409bf23aae7df4519,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5074984840491700346, guid: f21c7916be7c2fb409bf23aae7df4519,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5184344846944013857, guid: f21c7916be7c2fb409bf23aae7df4519,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5245395520049975771, guid: f21c7916be7c2fb409bf23aae7df4519,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5368208621879875411, guid: f21c7916be7c2fb409bf23aae7df4519,
         type: 3}
       propertyPath: m_Name
       value: CookingView
-      objectReference: {fileID: 0}
-    - target: {fileID: 7121713867579782579, guid: f21c7916be7c2fb409bf23aae7df4519,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7203571522734297818, guid: f21c7916be7c2fb409bf23aae7df4519,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7328435154581281313, guid: f21c7916be7c2fb409bf23aae7df4519,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7545582332502623707, guid: f21c7916be7c2fb409bf23aae7df4519,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7724027411510303980, guid: f21c7916be7c2fb409bf23aae7df4519,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8081615438922304549, guid: f21c7916be7c2fb409bf23aae7df4519,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8091375447547661563, guid: f21c7916be7c2fb409bf23aae7df4519,
         type: 3}
@@ -2186,16 +2086,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8117772553577419026, guid: f21c7916be7c2fb409bf23aae7df4519,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8392212654760015678, guid: f21c7916be7c2fb409bf23aae7df4519,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

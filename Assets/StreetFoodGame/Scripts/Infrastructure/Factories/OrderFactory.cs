@@ -1,19 +1,25 @@
-public class OrderFactory : IOrderFactory
+using StreetFoodGame.Domain.Interfaces;
+using StreetFoodGame.Domain.Entities;
+
+namespace StreetFoodGame.Infrastructure.Factories
 {
-    private readonly IRecipeRepository recipeRepository;
-    private readonly ICustomerRepository customerRepository;
-
-    public OrderFactory(IRecipeRepository recipeRepository, ICustomerRepository customerRepository)
+    public class OrderFactory : IOrderFactory
     {
-        this.recipeRepository = recipeRepository;
-        this.customerRepository = customerRepository;
-    }
+        private readonly IRecipeRepository recipeRepository;
+        private readonly ICustomerRepository customerRepository;
 
-    public Order CreateOrder()
-    {
-        Customer customer = customerRepository.GetRandomCustomer();
-        Recipe recipe = recipeRepository.GetRandomRecipe();
+        public OrderFactory(IRecipeRepository recipeRepository, ICustomerRepository customerRepository)
+        {
+            this.recipeRepository = recipeRepository;
+            this.customerRepository = customerRepository;
+        }
 
-        return new Order(customer, recipe);
+        public Order CreateOrder()
+        {
+            Customer customer = customerRepository.GetRandomCustomer();
+            Recipe recipe = recipeRepository.GetRandomRecipe();
+
+            return new Order(customer, recipe);
+        }
     }
-}   
+}

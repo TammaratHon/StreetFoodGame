@@ -1,14 +1,19 @@
 using UnityEngine;
+using StreetFoodGame.Domain.Entities;
+using StreetFoodGame.Application.Interfaces;
 
-public class OrderQueueView : MonoBehaviour, IOrderQueueView
+namespace StreetFoodGame.Presentation.Views
 {
-    public void AddOrder(Customer customer)
+    public class OrderQueueView : MonoBehaviour, IOrderQueueView
     {
-        // Here you would typically update the UI to show the new order in the queue.
-    }
+        public void AddOrder(Customer customer)
+        {
+            // Here you would typically update the UI to show the new order in the queue.
+        }
 
-    public void RemoveOrder(Customer customer)
-    {
-        // Here you would typically update the UI to remove the order from the queue.
+        public void RemoveOrder(Customer customer)
+        {
+            // Here you would typically update the UI to remove the order from the queue.
+        }
     }
 }

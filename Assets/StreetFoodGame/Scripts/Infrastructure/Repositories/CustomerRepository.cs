@@ -1,44 +1,50 @@
 using System;
 using System.Collections.Generic;
+using StreetFoodGame.Domain.Interfaces;
+using StreetFoodGame.Domain.Entities;
+using StreetFoodGame.Infrastructure.Data;
 
-public class CustomerRepository : ICustomerRepository
+namespace StreetFoodGame.Infrastructure.Repositories
 {
-    private readonly List<Customer> customerDataList;
-
-    public CustomerRepository(List<CustomerDataSO> customerDataList)
+    public class CustomerRepository : ICustomerRepository
     {
-        this.customerDataList = new List<Customer>();
-        foreach (var data in customerDataList)
+        private readonly List<Customer> customerDataList;
+
+        public CustomerRepository(List<CustomerDataSO> customerDataList)
         {
-            var customer = ConvertToCustomer(data);
-            this.customerDataList.Add(customer);
-        }
-    }
-
-    public List<Customer> GetAllCustomers()
-    {
-        return customerDataList;
-    }
-
-    public Customer GetCustomerByName(string customerName)
-    {
-        return customerDataList.Find(customer => customer.Name == customerName);
-    }
-
-    public Customer GetRandomCustomer()
-    {
-        if (customerDataList.Count == 0)
-        {
-            return null;
+            this.customerDataList = new List<Customer>();
+            foreach (var data in customerDataList)
+            {
+                var customer = ConvertToCustomer(data);
+                this.customerDataList.Add(customer);
+            }
         }
 
-        Random random = new Random();
-        int randomIndex = random.Next(customerDataList.Count);
-        return customerDataList[randomIndex];
-    }
+        public List<Customer> GetAllCustomers()
+        {
+            return customerDataList;
+        }
 
-    private Customer ConvertToCustomer(CustomerDataSO data)
-    {
-        return new Customer(data.customerName);
+        public Customer GetCustomerByName(string customerName)
+        {
+            return customerDataList.Find(customer => customer.Name == customerName);
+        }
+
+        public Customer GetRandomCustomer()
+        {
+            if (customerDataList.Count == 0)
+            {
+                return null;
+            }
+
+            Random random = new Random();
+            int randomIndex = random.Next(customerDataList.Count);
+            return customerDataList[randomIndex];
+        }
+
+        private Customer ConvertToCustomer(CustomerDataSO data)
+        {
+            return new Customer(data.customerName);
+        }
     }
 }

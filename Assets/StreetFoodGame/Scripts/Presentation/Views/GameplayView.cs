@@ -1,22 +1,36 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using StreetFoodGame.Application.Interfaces;
 
-public class GameplayView : MonoBehaviour, IGameplayView
+namespace StreetFoodGame.Presentation.Views
 {
-    // UI Elements
-    [SerializeField] private Button optionButton;
-    
-    // Events
-    public event Action OnOptionButtonPressed;
-
-    public void Hide()
+    public class GameplayView : MonoBehaviour, IGameplayView
     {
-        gameObject.SetActive(false);
-    }
+        // UI Elements
+        [SerializeField] private Button optionButton;
 
-    public void Show()
-    {
-        gameObject.SetActive(true);
+        // Events
+        public event Action OnOptionButtonPressed;
+
+        private void Awake()
+        {
+            optionButton.onClick.AddListener(HandleOptionButtonPressed);
+        }
+
+        private void HandleOptionButtonPressed()
+        {
+            OnOptionButtonPressed?.Invoke();
+        }
+
+        public void Hide()
+        {
+            gameObject.SetActive(false);
+        }
+
+        public void Show()
+        {
+            gameObject.SetActive(true);
+        }
     }
 }

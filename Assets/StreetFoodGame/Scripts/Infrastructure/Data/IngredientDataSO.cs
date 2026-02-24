@@ -1,8 +1,11 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "IngredientData", menuName = "StreetFoodGame/IngredientData")]
-public class IngredientDataSO : ScriptableObject
+namespace StreetFoodGame.Infrastructure.Data
 {
-    public string ingredientName;
-    public Sprite ingredientSprite;
+    [CreateAssetMenu(fileName = "IngredientData", menuName = "StreetFoodGame/IngredientData")]
+    public class IngredientDataSO : ScriptableObject
+    {
+        public string ingredientName;
+        public Sprite ingredientSprite;
+    }
 }

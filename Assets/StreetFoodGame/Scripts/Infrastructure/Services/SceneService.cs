@@ -1,25 +1,29 @@
 using System;
 using UnityEngine.SceneManagement;
+using StreetFoodGame.Application.Interfaces;
 
-public class SceneService : ISceneService
+namespace StreetFoodGame.Infrastructure.Services
 {
-    public async void LoadSceneAdditive(string sceneName, Action onComplete = null)
+    public class SceneService : ISceneService
     {
-        var operation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
-        while (!operation.isDone)
+        public async void LoadSceneAdditive(string sceneName, Action onComplete = null)
         {
-            await System.Threading.Tasks.Task.Yield();
+            var operation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+            while (!operation.isDone)
+            {
+                await System.Threading.Tasks.Task.Yield();
+            }
+            onComplete?.Invoke();
         }
-        onComplete?.Invoke();
-    }
 
-    public async void UnloadScene(string sceneName, Action onComplete = null)
-    {
-        var operation = SceneManager.UnloadSceneAsync(sceneName);
-        while (!operation.isDone)
+        public async void UnloadScene(string sceneName, Action onComplete = null)
         {
-            await System.Threading.Tasks.Task.Yield();
+            var operation = SceneManager.UnloadSceneAsync(sceneName);
+            while (!operation.isDone)
+            {
+                await System.Threading.Tasks.Task.Yield();
+            }
+            onComplete?.Invoke();
         }
-        onComplete?.Invoke();
     }
 }

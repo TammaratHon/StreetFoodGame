@@ -1,11 +1,14 @@
 using System.Collections.Generic;
 
-public class IngredientByStep
+namespace StreetFoodGame.Domain.Entities
 {
-    public IngredientByStep(List<Ingredient> ingredients)
+    public class IngredientByStep
     {
-        this.ingredients = ingredients;
+        public IngredientByStep(List<Ingredient> ingredients)
+        {
+            this.ingredients = ingredients;
+        }
+
+        public List<Ingredient> ingredients { get; private set; }
     }
-    
-    public List<Ingredient> ingredients;
 }

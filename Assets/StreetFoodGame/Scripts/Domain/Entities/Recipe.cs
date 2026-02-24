@@ -1,13 +1,16 @@
 using System.Collections.Generic;
 
-public class Recipe
+namespace StreetFoodGame.Domain.Entities
 {
-    public string Name { get; private set; }
-    public List<IngredientByStep> IngredientsByStep { get; private set; }
-
-    public Recipe(string name, List<IngredientByStep> ingredientsByStep)
+    public class Recipe
     {
-        Name = name;
-        IngredientsByStep = ingredientsByStep;
+        public string Name { get; private set; }
+        public List<IngredientByStep> IngredientsByStep { get; private set; }
+
+        public Recipe(string name, List<IngredientByStep> ingredientsByStep)
+        {
+            Name = name;
+            IngredientsByStep = ingredientsByStep;
+        }
     }
 }

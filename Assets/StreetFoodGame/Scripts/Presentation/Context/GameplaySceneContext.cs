@@ -1,8 +1,17 @@
 using UnityEngine;
+using StreetFoodGame.Presentation.Views;
+using StreetFoodGame.Application.Interfaces;
 
-public class GameplaySceneContext : MonoBehaviour
+namespace StreetFoodGame.Presentation.Context
 {
-    public GameplayView gameplayView;
-    public CookingView cookingView;
-    public OrderQueueView orderQueueView;
+    public class GameplaySceneContext : MonoBehaviour
+    {
+        [SerializeField] private GameplayView gameplayView;
+        [SerializeField] private CookingView cookingView;
+        [SerializeField] private OrderQueueView orderQueueView;
+
+        public IGameplayView GameplayView => gameplayView;
+        public ICookingView CookingView => cookingView;
+        public IOrderQueueView OrderQueueView => orderQueueView;
+    }
 }

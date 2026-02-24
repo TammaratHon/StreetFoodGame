@@ -1,50 +1,54 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using StreetFoodGame.Application.Interfaces;
 
-public class MainMenuView : MonoBehaviour, IMainMenuView
+namespace StreetFoodGame.Presentation.Views
 {
-    // UI Elements
-    [SerializeField] private Button startGameButton;
-    [SerializeField] private Button optionsButton;
-    [SerializeField] private Button exitButton;
-
-    // Events
-    public event Action OnStartGameButtonPressed;
-    public event Action OnOptionsButtonPressed;
-    public event Action OnExitButtonPressed;
-
-    private void Awake()
+    public class MainMenuView : MonoBehaviour, IMainMenuView
     {
-        if(startGameButton != null)
-            startGameButton.onClick.AddListener(() => OnStartGameButtonPressed?.Invoke());
+        // UI Elements
+        [SerializeField] private Button startGameButton;
+        [SerializeField] private Button optionsButton;
+        [SerializeField] private Button exitButton;
 
-        if(optionsButton != null)
-            optionsButton.onClick.AddListener(() => OnOptionsButtonPressed?.Invoke());
+        // Events
+        public event Action OnStartGameButtonPressed;
+        public event Action OnOptionsButtonPressed;
+        public event Action OnExitButtonPressed;
 
-        if(exitButton != null)
-            exitButton.onClick.AddListener(() => OnExitButtonPressed?.Invoke());
-    }
+        private void Awake()
+        {
+            if (startGameButton != null)
+                startGameButton.onClick.AddListener(() => OnStartGameButtonPressed?.Invoke());
 
-    private void OnDestroy()
-    {
-        if(startGameButton != null)
-            startGameButton.onClick.RemoveAllListeners();
+            if (optionsButton != null)
+                optionsButton.onClick.AddListener(() => OnOptionsButtonPressed?.Invoke());
 
-        if(optionsButton != null)
-            optionsButton.onClick.RemoveAllListeners();
+            if (exitButton != null)
+                exitButton.onClick.AddListener(() => OnExitButtonPressed?.Invoke());
+        }
 
-        if(exitButton != null)
-            exitButton.onClick.RemoveAllListeners();
-    }
+        private void OnDestroy()
+        {
+            if (startGameButton != null)
+                startGameButton.onClick.RemoveAllListeners();
 
-    public void Hide()
-    {
-        gameObject.SetActive(false);
-    }
+            if (optionsButton != null)
+                optionsButton.onClick.RemoveAllListeners();
 
-    public void Show()
-    {
-        gameObject.SetActive(true);
+            if (exitButton != null)
+                exitButton.onClick.RemoveAllListeners();
+        }
+
+        public void Hide()
+        {
+            gameObject.SetActive(false);
+        }
+
+        public void Show()
+        {
+            gameObject.SetActive(true);
+        }
     }
 }

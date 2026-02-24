@@ -1,38 +1,42 @@
 using System.Collections.Generic;
+using StreetFoodGame.Domain.Entities;
 
-public class OrderQueueManager
+namespace StreetFoodGame.Application.Services
 {
-    private readonly List<Order> orderQueue = new List<Order>();
-
-    public void EnqueueOrder(Order order)
+    public class OrderQueueManager
     {
-        orderQueue.Add(order);
-    }
+        private readonly List<Order> orderQueue = new List<Order>();
 
-    public Order DequeueOrder()
-    {
-        if (orderQueue.Count == 0)
+        public void EnqueueOrder(Order order)
         {
-            return null;
+            orderQueue.Add(order);
         }
 
-        var order = orderQueue[0];
-        orderQueue.RemoveAt(0);
-        return order;
-    }
+        public Order DequeueOrder()
+        {
+            if (orderQueue.Count == 0)
+            {
+                return null;
+            }
 
-    public void RemoveOrder(Order order)
-    {
-        orderQueue.Remove(order);
-    }
+            var order = orderQueue[0];
+            orderQueue.RemoveAt(0);
+            return order;
+        }
 
-    public int GetQueueSize()
-    {
-        return orderQueue.Count;
-    }
+        public void RemoveOrder(Order order)
+        {
+            orderQueue.Remove(order);
+        }
 
-    public List<Order> GetCurrentOrders()
-    {
-        return new List<Order>(orderQueue);
+        public int GetQueueSize()
+        {
+            return orderQueue.Count;
+        }
+
+        public List<Order> GetCurrentOrders()
+        {
+            return new List<Order>(orderQueue);
+        }
     }
 }
