@@ -2758,6 +2758,7 @@ MonoBehaviour:
   - {fileID: 7950376336298097789}
   - {fileID: 4706747789810337891}
   - {fileID: 3339780267168023063}
+  _cookButton: {fileID: 3942712039816768731}
 --- !u!1 &5522855452323914684
 GameObject:
   m_ObjectHideFlags: 0
@@ -3454,6 +3455,7 @@ GameObject:
   - component: {fileID: 149863406055030777}
   - component: {fileID: 3169722583820497034}
   - component: {fileID: 6034955009747116427}
+  - component: {fileID: 3942712039816768731}
   m_Layer: 0
   m_Name: Pestle
   m_TagString: Untagged
@@ -3534,6 +3536,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3942712039816768731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7724027411510303980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03ff230d636ea864b85e3c382d1b69a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 1346520830268124178}
+  highlightImage: {fileID: 4069779299417876956}
 --- !u!1 &8016000146882496033
 GameObject:
   m_ObjectHideFlags: 0
@@ -4381,8 +4397,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 135, y: 222, z: 64, w: 45}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

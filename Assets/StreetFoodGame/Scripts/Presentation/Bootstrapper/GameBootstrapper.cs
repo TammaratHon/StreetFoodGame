@@ -98,7 +98,9 @@ namespace StreetFoodGame.Presentation.Bootstrapper
             );
 
             var startGameUseCase = new StartGameUseCase(receiveOrderUseCase);
-            var selectIngredientUseCase = new SelectIngredientUseCase();
+            var selectIngredientUseCase = new CookingUseCase(
+                recipeRepository.GetAllRecipes()
+            );
 
             // Create the GameplayPresenter and wire everything together
             var gameplayPresenter = new GameplayPresenter(

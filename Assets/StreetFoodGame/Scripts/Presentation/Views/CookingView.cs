@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using StreetFoodGame.Application.Interfaces;
 using StreetFoodGame.Presentation.Components;
+using UnityEngine.UI;
 
 namespace StreetFoodGame.Presentation.Views
 {
@@ -10,7 +11,10 @@ namespace StreetFoodGame.Presentation.Views
         [SerializeField] private IngredientButton[] _ingredientButton;
         [SerializeField] private CookingIngredient[] _cookingIngredient;
 
+        [SerializeField] private CookingButton _cookButton;
+
         public event Action<string> OnIngredientButtonPressed;
+        public event Action OnCookButtonPressed;
 
         private void Awake()
         {
@@ -23,6 +27,8 @@ namespace StreetFoodGame.Presentation.Views
             {
                 image.gameObject.SetActive(false);
             }
+
+            _cookButton.Initialize(() => OnCookButtonPressed?.Invoke());
         }
 
         public void Hide()
@@ -54,6 +60,14 @@ namespace StreetFoodGame.Presentation.Views
 
                 image.HideIngredient();
                 break;
+            }
+        }
+
+        public void HideAllCookingIngredientImages()
+        {
+            foreach (var image in _cookingIngredient)
+            {
+                image.HideIngredient();
             }
         }
     }
