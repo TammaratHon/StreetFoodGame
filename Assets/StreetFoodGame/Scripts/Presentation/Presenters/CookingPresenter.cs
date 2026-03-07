@@ -2,9 +2,8 @@ using System;
 using StreetFoodGame.Application.Interfaces;
 using StreetFoodGame.Application.Usecases;
 using StreetFoodGame.Domain.Entities;
-using Utilities;
 
-namespace StreetFoodGame.Application.Presenters
+namespace StreetFoodGame.Presentation.Presenters
 {
     public class CookingPresenter : IDisposable
     {
@@ -15,19 +14,18 @@ namespace StreetFoodGame.Application.Presenters
         public CookingPresenter(
             ICookingView view,
             ISpriteProviderService spriteProviderService,
-            CookingUseCase selectIngredientUseCase
+            CookingUseCase cookingUseCase
         )
         {
             this.view = view;
             this.spriteProviderService = spriteProviderService;
-            this.cookingUseCase = selectIngredientUseCase;
-
-            view.OnIngredientButtonPressed += HandleIngredientButtonPressed;
-            view.OnCookButtonPressed += HandleCookButtonPressed;
+            this.cookingUseCase = cookingUseCase;
         }
 
         public void StartCooking()
         {
+            view.OnIngredientButtonPressed += HandleIngredientButtonPressed;
+            view.OnCookButtonPressed += HandleCookButtonPressed;
             view.Show();
         }
 
@@ -35,13 +33,11 @@ namespace StreetFoodGame.Application.Presenters
         {
             if(cookingUseCase.IsIngredientContained(ingredientKey))
             {
-                Debugger.Log($"Ingredient {ingredientKey} deselected");
                 cookingUseCase.RemoveIngredient(ingredientKey);
                 view.HideCookingIngredientImage(ingredientKey);
             }
             else
             {
-                Debugger.Log($"Ingredient {ingredientKey} selected");
                 cookingUseCase.AddIngredient(ingredientKey);
                 view.ShowCookingIngredientImage(
                     ingredientKey,
@@ -55,13 +51,6 @@ namespace StreetFoodGame.Application.Presenters
             if(cookingUseCase.Cook(out Menu cookedMenu))
             {
                 view.HideAllCookingIngredientImages();
-                if(cookedMenu != null)
-                {
-                    Debugger.Log($"Cooked {cookedMenu.Name}!");
-                }
-            } else
-            {
-                Debugger.Log("Cooking failed. Current ingredients do not match any recipe.");
             }
         }
 

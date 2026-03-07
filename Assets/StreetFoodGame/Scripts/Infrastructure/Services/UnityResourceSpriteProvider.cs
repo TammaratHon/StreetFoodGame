@@ -1,9 +1,9 @@
-using StreetFoodGame.Application.Interfaces;
 using UnityEngine;
+using StreetFoodGame.Application.Interfaces;
 
 namespace StreetFoodGame.Infrastructure.Services
 {
-    public class ResourceSpriteProvider : ISpriteProviderService
+    public class UnityResourceSpriteProvider : ISpriteProviderService
     {
         public object LoadSprite(string spriteName)
         {

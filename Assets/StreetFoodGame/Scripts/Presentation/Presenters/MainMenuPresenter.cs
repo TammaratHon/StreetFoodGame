@@ -1,41 +1,35 @@
 using System;
+using VContainer.Unity;
+using StreetFoodGame.Domain.Enums;
 using StreetFoodGame.Application.Interfaces;
 
-namespace StreetFoodGame.Application.Presenters
+namespace StreetFoodGame.Presentation.Presenters
 {
-    public class MainMenuPresenter : IDisposable
+    public class MainMenuPresenter : IStartable, IDisposable
     {
         private readonly IMainMenuView view;
-        private readonly ISceneService sceneService;
         private readonly IApplicationService applicationService;
-        private readonly Action onGameStarted;
 
         public MainMenuPresenter(
             IMainMenuView view,
-            ISceneService sceneService,
-            IApplicationService applicationService,
-            Action onGameStarted
+            IApplicationService applicationService
         )
         {
             this.view = view;
-            this.sceneService = sceneService;
             this.applicationService = applicationService;
-            this.onGameStarted = onGameStarted;
+        }
 
+        public void Start()
+        {
             view.OnStartGameButtonPressed += HandleStartGameButtonPressed;
             view.OnOptionsButtonPressed += HandleOptionsButtonPressed;
             view.OnExitButtonPressed += HandleExitButtonPressed;
-        }
-
-        public void Show()
-        {
             view.Show();
         }
 
         private void HandleStartGameButtonPressed()
         {
-            view.Hide();
-            onGameStarted.Invoke();
+            applicationService.ChangeState(AppState.Gameplay);
         }
 
         private void HandleOptionsButtonPressed()

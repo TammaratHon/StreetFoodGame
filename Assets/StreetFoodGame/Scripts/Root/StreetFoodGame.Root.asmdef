@@ -1,11 +1,12 @@
 {
-    "name": "StreetFoodGame.Infrastructure",
+    "name": "StreetFoodGame.Root",
     "rootNamespace": "",
     "references": [
         "GUID:084d89a931ba92f48945fe852733e4cd",
         "GUID:2870133789679254e95c22907bdbdf16",
-        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
-        "GUID:f51ebe6a0ceec4240a699833d6309b23"
+        "GUID:e51842cfc390c2342a0ca34ca8d24fee",
+        "GUID:9aef0d16f722cf74b8d131ae6efd7014",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

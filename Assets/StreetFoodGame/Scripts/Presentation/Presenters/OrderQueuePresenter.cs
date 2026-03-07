@@ -1,30 +1,30 @@
 using System;
-using StreetFoodGame.Application.Interfaces;
-using StreetFoodGame.Application.Services;
 using StreetFoodGame.Domain.Entities;
+using StreetFoodGame.Domain.Interfaces;
+using StreetFoodGame.Application.Interfaces;
 
-namespace StreetFoodGame.Application.Presenters
+namespace StreetFoodGame.Presentation.Presenters
 {
     public class OrderQueuePresenter : IDisposable
     {
         private readonly IOrderQueueView orderQueueView;
-        private readonly OrderQueueManager orderQueueManager;
+        private readonly IOrderRepository orderRepository;
 
-        public OrderQueuePresenter(IOrderQueueView orderQueueView, OrderQueueManager orderQueueManager)
+        public OrderQueuePresenter(IOrderQueueView orderQueueView, IOrderRepository orderRepository)
         {
             this.orderQueueView = orderQueueView;
-            this.orderQueueManager = orderQueueManager;
+            this.orderRepository = orderRepository;
         }
 
         public void AddOrderToQueue(Order order)
         {
-            orderQueueManager.EnqueueOrder(order);
+            orderRepository.EnqueueOrder(order);
             orderQueueView.AddOrder(order.Customer);
         }
 
         public void RemoveOrderFromQueue(Order order)
         {
-            orderQueueManager.RemoveOrder(order);
+            orderRepository.RemoveOrder(order);
             orderQueueView.RemoveOrder(order.Customer);
         }
 

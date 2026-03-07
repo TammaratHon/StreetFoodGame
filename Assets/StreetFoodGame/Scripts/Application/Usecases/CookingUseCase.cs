@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using StreetFoodGame.Domain.Entities;
-using Utilities;
+using StreetFoodGame.Domain.Interfaces;
 
 namespace StreetFoodGame.Application.Usecases
 {
@@ -11,9 +11,9 @@ namespace StreetFoodGame.Application.Usecases
 
         private int currentStepIndex = 0;
 
-        public CookingUseCase(List<Recipe> recipes)
+        public CookingUseCase(IRecipeRepository recipeRepository)
         {
-            this.recipes = recipes;
+            recipes = recipeRepository.GetAllRecipes();
         }
 
         public void AddIngredient(string ingredientKey)
@@ -36,7 +36,6 @@ namespace StreetFoodGame.Application.Usecases
         {
             if(currentIngredients.Count == 0)
             {
-                Debugger.Log("No ingredients added, cannot cook.");
                 menu = null;
                 return false; // No ingredients, cannot cook
             }
@@ -51,10 +50,6 @@ namespace StreetFoodGame.Application.Usecases
                     matchingRecipes.Add(rec);
                 }
             }
-
-            matchingRecipes.ForEach(
-                rec => Debugger.Log($"Can make {rec.Name} with current ingredients: {string.Join(", ", rec.IngredientsByStep[currentStepIndex].ingredients)}")
-            );
 
             foreach(var rec in matchingRecipes)
             {
@@ -83,7 +78,6 @@ namespace StreetFoodGame.Application.Usecases
                 if(allMatch)
                 {
                     currentIngredients.Clear(); // Clear ingredients for the next step
-                    Debugger.Log($"Step {currentStepIndex + 1} of {rec.Name} matched!");
                     currentStepIndex++;
                     return true;
                 }
