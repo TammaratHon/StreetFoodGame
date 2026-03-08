@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Pepper
   m_EditorClassIdentifier: 
   ingredientName: Pepper
-  ingredientSprite: {fileID: 0}
+  ingredientSprite: {fileID: 21300000, guid: 286fe9d48f9ff204585b5e8e5b33fa37, type: 3}

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Heart
   m_EditorClassIdentifier: 
   ingredientName: Heart
-  ingredientSprite: {fileID: 0}
+  ingredientSprite: {fileID: 21300000, guid: a3fd2d3e2ddcd224597a55ebcc14ea69, type: 3}

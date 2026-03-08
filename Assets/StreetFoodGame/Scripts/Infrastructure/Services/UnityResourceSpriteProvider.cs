@@ -7,7 +7,7 @@ namespace StreetFoodGame.Infrastructure.Services
     {
         public object LoadSprite(string spriteName)
         {
-            string path = $"Graphics2D/IngredientIcons/{spriteName}";
+            string path = $"Graphics2D/IngredientIcons/Highlight/{spriteName}";
             return Resources.Load<Sprite>(path);
         }
     }

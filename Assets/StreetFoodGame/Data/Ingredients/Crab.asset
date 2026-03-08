@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Crab
   m_EditorClassIdentifier: 
   ingredientName: Crab
-  ingredientSprite: {fileID: 0}
+  ingredientSprite: {fileID: 21300000, guid: febbd5d1fb3c57346be179295d2ea622, type: 3}

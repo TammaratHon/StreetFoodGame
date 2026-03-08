@@ -4,6 +4,8 @@ namespace StreetFoodGame.Application.Interfaces
 {
     public interface IGameplayView : IView
     {
-        event Action OnOptionButtonPressed;
+        event Action OnSettingButtonPressed;
+        event Action OnCleanButtonPressed;
+        event Action OnRecipeButtonPressed;
     }
 }

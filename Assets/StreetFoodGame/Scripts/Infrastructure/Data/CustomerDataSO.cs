@@ -6,6 +6,5 @@ namespace StreetFoodGame.Infrastructure.Data
     public class CustomerDataSO : ScriptableObject
     {
         public string customerName;
-        public Sprite customerSprite;
     }
 }

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Garlic
   m_EditorClassIdentifier: 
   ingredientName: Garlic
-  ingredientSprite: {fileID: 0}
+  ingredientSprite: {fileID: 21300000, guid: 88b0eb10f6047994bac3b0866598e98a, type: 3}

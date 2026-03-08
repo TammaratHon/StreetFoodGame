@@ -3,7 +3,7 @@ using StreetFoodGame.Domain.Entities;
 
 namespace StreetFoodGame.Domain.Interfaces
 {
-    public interface IOrderRepository
+    public interface IOrderQueueRepository
     {
         void EnqueueOrder(Order order);
         Order DequeueOrder();

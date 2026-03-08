@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Papaya
   m_EditorClassIdentifier: 
   ingredientName: Papaya
-  ingredientSprite: {fileID: 0}
+  ingredientSprite: {fileID: 21300000, guid: f115d1276cfb57847a959905e535be9a, type: 3}

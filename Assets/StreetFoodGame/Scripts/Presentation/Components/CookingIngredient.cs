@@ -3,32 +3,27 @@ using UnityEngine.UI;
 
 namespace StreetFoodGame.Presentation.Components
 {
-    [RequireComponent(typeof(Image))]
     public class CookingIngredient : MonoBehaviour
     {
         public string IngredientKey => ingredientKey;
         private string ingredientKey;
 
-        private Image ingredientImage;
-
-        private void Awake()
-        {
-            ingredientImage = GetComponent<Image>();
-            ingredientImage.gameObject.SetActive(false);
-        }
+        [SerializeField] private Image ingredientImage;
 
         public void ShowIngredient(string ingredientKey, object spriteAsset)
         {
+            if(ingredientImage == null) return;
             this.ingredientKey = ingredientKey;
 
-            ingredientImage.gameObject.SetActive(true);
+            gameObject.SetActive(true);
             ingredientImage.sprite = spriteAsset as Sprite;
         }
 
         public void HideIngredient()
         {
+            if(ingredientImage == null) return;
             ingredientKey = "";
-            ingredientImage.gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 }

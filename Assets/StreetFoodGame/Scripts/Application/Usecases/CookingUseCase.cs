@@ -10,6 +10,7 @@ namespace StreetFoodGame.Application.Usecases
         private readonly HashSet<string> currentIngredients = new HashSet<string>();
 
         private int currentStepIndex = 0;
+        public int CurrentStepIndex => currentStepIndex;
 
         public CookingUseCase(IRecipeRepository recipeRepository)
         {
@@ -89,6 +90,11 @@ namespace StreetFoodGame.Application.Usecases
         public bool IsIngredientContained(string ingredientKey)
         {
             return currentIngredients.Contains(ingredientKey);
+        }
+
+        public bool IsIngredientSlotAvailable()
+        {
+            return currentIngredients.Count < 5;
         }
     }
 }

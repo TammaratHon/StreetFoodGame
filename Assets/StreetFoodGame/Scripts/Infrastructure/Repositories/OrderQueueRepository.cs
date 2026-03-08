@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using StreetFoodGame.Domain.Entities;
+using StreetFoodGame.Domain.Interfaces;
 
 namespace StreetFoodGame.Infrastructure.Repositories
 {
-    public class OrderQueueRepository
+    public class OrderQueueRepository : IOrderQueueRepository
     {
         private readonly List<Order> orderQueue = new List<Order>();
 

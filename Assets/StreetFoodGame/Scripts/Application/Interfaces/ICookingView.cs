@@ -6,9 +6,5 @@ namespace StreetFoodGame.Application.Interfaces
     {
         event Action<string> OnIngredientButtonPressed;
         event Action OnCookButtonPressed;
-
-        void ShowCookingIngredientImage(string ingredientKey, object spriteAsset);
-        void HideCookingIngredientImage(string ingredientKey);
-        void HideAllCookingIngredientImages();
     }
 }

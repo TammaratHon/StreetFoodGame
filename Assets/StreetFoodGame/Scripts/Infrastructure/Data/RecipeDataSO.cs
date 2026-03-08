@@ -8,7 +8,6 @@ namespace StreetFoodGame.Infrastructure.Data
     public class RecipeDataSO : ScriptableObject
     {
         public string foodItemName;
-        public Sprite foodItemSprite;
         public List<IngredientSOByStep> ingredientBySteps;
     }
 

@@ -1,17 +1,11 @@
+using System.Collections.Generic;
 using StreetFoodGame.Domain.Entities;
 
 namespace StreetFoodGame.Application.Interfaces
 {
     public interface IOrderQueueView
     {
-        /// <summary>
-        /// Update the order queue display with the given list of recipe names.
-        /// </summary>
-        void AddOrder(Customer customer);
-
-        /// <summary>
-        /// Remove an order from the queue by its recipe name. This is typically called when an order is completed.
-        /// </summary>
+        void AddOrder(Customer customer, List<Recipe> recipes);
         void RemoveOrder(Customer customer);
     }
 }

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Lime
   m_EditorClassIdentifier: 
   ingredientName: Lime
-  ingredientSprite: {fileID: 0}
+  ingredientSprite: {fileID: 21300000, guid: eaaf8735d22805340a2ce02d191d71ce, type: 3}

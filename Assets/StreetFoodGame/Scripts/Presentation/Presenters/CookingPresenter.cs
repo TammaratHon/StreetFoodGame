@@ -7,39 +7,43 @@ namespace StreetFoodGame.Presentation.Presenters
 {
     public class CookingPresenter : IDisposable
     {
-        private readonly ICookingView view;
+        private readonly ICookingView cookingView;
+        private readonly ICookingStepView cookingStepView;
         private readonly ISpriteProviderService spriteProviderService;
         private readonly CookingUseCase cookingUseCase;
 
         public CookingPresenter(
-            ICookingView view,
+            ICookingView cookingView,
+            ICookingStepView cookingStepView,
             ISpriteProviderService spriteProviderService,
             CookingUseCase cookingUseCase
         )
         {
-            this.view = view;
+            this.cookingView = cookingView;
+            this.cookingStepView = cookingStepView;
             this.spriteProviderService = spriteProviderService;
             this.cookingUseCase = cookingUseCase;
         }
 
         public void StartCooking()
         {
-            view.OnIngredientButtonPressed += HandleIngredientButtonPressed;
-            view.OnCookButtonPressed += HandleCookButtonPressed;
-            view.Show();
+            cookingView.OnIngredientButtonPressed += HandleIngredientButtonPressed;
+            cookingView.OnCookButtonPressed += HandleCookButtonPressed;
+            cookingView.Show();
+            cookingStepView.ShowCookingStep(cookingUseCase.CurrentStepIndex);
         }
 
         private void HandleIngredientButtonPressed(string ingredientKey)
         {
-            if(cookingUseCase.IsIngredientContained(ingredientKey))
+            if(cookingUseCase.IsIngredientContained(ingredientKey) && cookingUseCase.IsIngredientSlotAvailable())
             {
                 cookingUseCase.RemoveIngredient(ingredientKey);
-                view.HideCookingIngredientImage(ingredientKey);
+                cookingStepView.HideIngredient(ingredientKey);
             }
             else
             {
                 cookingUseCase.AddIngredient(ingredientKey);
-                view.ShowCookingIngredientImage(
+                cookingStepView.ShowIngredient(
                     ingredientKey,
                     spriteProviderService.LoadSprite(ingredientKey)
                 );
@@ -50,14 +54,15 @@ namespace StreetFoodGame.Presentation.Presenters
         {
             if(cookingUseCase.Cook(out Menu cookedMenu))
             {
-                view.HideAllCookingIngredientImages();
+                cookingStepView.HideAllIngredients();
+                cookingStepView.ShowCookingStep(cookingUseCase.CurrentStepIndex);
             }
         }
 
         public void Dispose()
         {
-            view.OnIngredientButtonPressed -= HandleIngredientButtonPressed;
-            view.OnCookButtonPressed -= HandleCookButtonPressed;
+            cookingView.OnIngredientButtonPressed -= HandleIngredientButtonPressed;
+            cookingView.OnCookButtonPressed -= HandleCookButtonPressed;
         }
     }
 }

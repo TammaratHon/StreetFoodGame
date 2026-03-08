@@ -11,29 +11,28 @@ namespace StreetFoodGame.Presentation.Presenters
     {
         private readonly IGameplayView view;
         private readonly IApplicationService applicationService;
-        private readonly StartGameUseCase startGameUseCase;
         private readonly CookingPresenter cookingPresenter;
         private readonly OrderQueuePresenter orderQueuePresenter;
 
         public GameplayPresenter(
             IGameplayView view,
             IApplicationService applicationService,
-            StartGameUseCase startGameUseCase,
             CookingPresenter cookingPresenter,
             OrderQueuePresenter orderQueuePresenter
         )
         {
             this.view = view;
             this.applicationService = applicationService;
-            this.startGameUseCase = startGameUseCase;
             this.cookingPresenter = cookingPresenter;
             this.orderQueuePresenter = orderQueuePresenter;
         }
 
         public void Start()
         {
-            view.OnOptionButtonPressed += HandleOptionButtonPressed;
-            startGameUseCase.Execute();
+            view.OnSettingButtonPressed += HandleSettingButtonPressed;
+            view.OnCleanButtonPressed += HandleCleanButtonPressed;
+            view.OnRecipeButtonPressed += HandleRecipeButtonPressed;
+            orderQueuePresenter.AddOrderToQueue();
 
             // Additional logic to initialize gameplay can be added here.
             view.Show();
@@ -46,14 +45,26 @@ namespace StreetFoodGame.Presentation.Presenters
             Dispose();
         }
 
-        private void HandleOptionButtonPressed()
+        private void HandleSettingButtonPressed()
         {
-            // Additional logic to handle the option button press can be added here.
+            // Additional logic to handle the setting button press can be added here.
+        }
+
+        private void HandleCleanButtonPressed()
+        {
+            // Additional logic to handle the clean button press can be added here.
+        }
+
+        private void HandleRecipeButtonPressed()
+        {
+            // Additional logic to handle the recipe button press can be added here.
         }
 
         public void Dispose()
         {
-            view.OnOptionButtonPressed -= HandleOptionButtonPressed;
+            view.OnSettingButtonPressed -= HandleSettingButtonPressed;
+            view.OnCleanButtonPressed -= HandleCleanButtonPressed;
+            view.OnRecipeButtonPressed -= HandleRecipeButtonPressed;
         }
     }
 }

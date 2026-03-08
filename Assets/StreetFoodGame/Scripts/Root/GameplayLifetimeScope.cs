@@ -35,6 +35,7 @@ namespace StreetFoodGame.Root
         
             builder.RegisterComponentInHierarchy<GameplayView>().As<IGameplayView>();
             builder.RegisterComponentInHierarchy<CookingView>().As<ICookingView>();
+            builder.RegisterComponentInHierarchy<CookingStepView>().As<ICookingStepView>();
             builder.RegisterComponentInHierarchy<OrderQueueView>().As<IOrderQueueView>();
 
             builder.Register<IOrderFactory, OrderFactory>(Lifetime.Scoped);
@@ -48,7 +49,7 @@ namespace StreetFoodGame.Root
             // Scene-specific repositories
             builder.Register<IRecipeRepository, RecipeRepository>(Lifetime.Scoped);
             builder.Register<ICustomerRepository, CustomerRepository>(Lifetime.Scoped);
-            builder.Register<OrderQueueRepository>(Lifetime.Scoped);
+            builder.Register<IOrderQueueRepository, OrderQueueRepository>(Lifetime.Scoped);
 
             builder.Register<CookingPresenter>(Lifetime.Scoped);
             builder.Register<OrderQueuePresenter>(Lifetime.Scoped);

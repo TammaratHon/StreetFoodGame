@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SomtamFish
   m_EditorClassIdentifier: 
   foodItemName: SomtamFish
-  foodItemSprite: {fileID: 0}
+  foodItemSprite: {fileID: 21300000, guid: 50a051cccf6033540b928e9d0a24321d, type: 3}
   ingredientBySteps:
   - ingredients:
     - {fileID: 11400000, guid: d776934370dc785429b204be1db3e166, type: 2}
@@ -21,10 +21,12 @@ MonoBehaviour:
   - ingredients:
     - {fileID: 11400000, guid: 830982fd1520b2c46bb502672fd2c89a, type: 2}
     - {fileID: 11400000, guid: 973cd97a023d047478fc3464d810bff3, type: 2}
+    - {fileID: 11400000, guid: b39f8dd5713911c4098fb85a9a695e22, type: 2}
     - {fileID: 11400000, guid: f7e2c52d1fb427a4593ea85a13957ce6, type: 2}
     - {fileID: 11400000, guid: 9bb8cdafe167c5e4db71a751b80f51df, type: 2}
   - ingredients:
     - {fileID: 11400000, guid: eb45948a980383f48a5e83f36f4a0312, type: 2}
+    - {fileID: 11400000, guid: 0533dd48162b7314a8829fc02ee154a5, type: 2}
   - ingredients:
     - {fileID: 11400000, guid: b94667b375e121b4386bfdd8e82934f6, type: 2}
     - {fileID: 11400000, guid: bd7b815affd833e4ebee6feb05756aab, type: 2}

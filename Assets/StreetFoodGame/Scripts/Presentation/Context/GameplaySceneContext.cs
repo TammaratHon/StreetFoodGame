@@ -8,10 +8,12 @@ namespace StreetFoodGame.Presentation.Context
     {
         [SerializeField] private GameplayView gameplayView;
         [SerializeField] private CookingView cookingView;
+        [SerializeField] private CookingStepView cookingStepView;
         [SerializeField] private OrderQueueView orderQueueView;
 
         public IGameplayView GameplayView => gameplayView;
         public ICookingView CookingView => cookingView;
+        public ICookingStepView CookingStepView => cookingStepView;
         public IOrderQueueView OrderQueueView => orderQueueView;
     }
 }

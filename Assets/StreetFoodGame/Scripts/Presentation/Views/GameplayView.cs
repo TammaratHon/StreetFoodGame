@@ -8,19 +8,35 @@ namespace StreetFoodGame.Presentation.Views
     public class GameplayView : MonoBehaviour, IGameplayView
     {
         // UI Elements
-        [SerializeField] private Button optionButton;
+        [SerializeField] private Button settingButton;
+        [SerializeField] private Button cleanButton;
+        [SerializeField] private Button recipeButton;
 
         // Events
-        public event Action OnOptionButtonPressed;
+        public event Action OnSettingButtonPressed;
+        public event Action OnCleanButtonPressed;
+        public event Action OnRecipeButtonPressed;
 
         private void Awake()
         {
-            optionButton.onClick.AddListener(HandleOptionButtonPressed);
+            settingButton.onClick.AddListener(HandleSettingButtonPressed);
+            cleanButton.onClick.AddListener(HandleCleanButtonPressed);
+            recipeButton.onClick.AddListener(HandleRecipeButtonPressed);
         }
 
-        private void HandleOptionButtonPressed()
+        private void HandleSettingButtonPressed()
         {
-            OnOptionButtonPressed?.Invoke();
+            OnSettingButtonPressed?.Invoke();
+        }
+
+        private void HandleCleanButtonPressed()
+        {
+            OnCleanButtonPressed?.Invoke();
+        }
+
+        private void HandleRecipeButtonPressed()
+        {
+            OnRecipeButtonPressed?.Invoke();
         }
 
         public void Hide()
@@ -31,6 +47,13 @@ namespace StreetFoodGame.Presentation.Views
         public void Show()
         {
             gameObject.SetActive(true);
+        }
+
+        private void OnDestroy()
+        {
+            settingButton.onClick.RemoveListener(HandleSettingButtonPressed);
+            cleanButton.onClick.RemoveListener(HandleCleanButtonPressed);
+            recipeButton.onClick.RemoveListener(HandleRecipeButtonPressed);
         }
     }
 }

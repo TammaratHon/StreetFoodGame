@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Fish
   m_EditorClassIdentifier: 
   ingredientName: Fish
-  ingredientSprite: {fileID: 0}
+  ingredientSprite: {fileID: 21300000, guid: 24db988af96c83440ba45fa11f1b4ca6, type: 3}

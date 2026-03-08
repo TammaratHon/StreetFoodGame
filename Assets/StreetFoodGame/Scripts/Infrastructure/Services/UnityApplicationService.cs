@@ -9,7 +9,7 @@ namespace StreetFoodGame.Infrastructure.Services
         private readonly ISceneService sceneService;
 
         public AppState CurrentState => currentState;
-        private AppState currentState = AppState.None;
+        private AppState currentState = AppState.Boot;
 
         private string sceneToUnload;
         private string sceneToLoad;
