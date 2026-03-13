@@ -9,6 +9,7 @@ namespace StreetFoodGame.Presentation.Components
         private string ingredientKey;
 
         [SerializeField] private Image ingredientImage;
+        [SerializeField] private CookingIngredientAnimator animator;
 
         public void ShowIngredient(string ingredientKey, object spriteAsset)
         {
@@ -17,13 +18,36 @@ namespace StreetFoodGame.Presentation.Components
 
             gameObject.SetActive(true);
             ingredientImage.sprite = spriteAsset as Sprite;
+
+            if(animator != null)
+            {
+                animator.PlayShowAnimation();
+            }
+        }
+
+        public void ChangePosition(Vector3 newPosition, bool instant = false)
+        {
+            if(animator == null || instant)
+            {
+                transform.position = newPosition;
+            } else
+            {
+                animator.LerpToPosition(newPosition);
+            }
         }
 
         public void HideIngredient()
         {
             if(ingredientImage == null) return;
             ingredientKey = "";
-            gameObject.SetActive(false);
+
+            if(animator == null)
+            {
+                gameObject.SetActive(false);
+            } else
+            {
+                animator.PlayHideAnimation();
+            }
         }
     }
 }

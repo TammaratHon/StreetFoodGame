@@ -19,8 +19,8 @@ namespace StreetFoodGame.Presentation.Components
             button = GetComponent<Button>();
             button.onClick.AddListener(OnButtonClick);
 
-            image.gameObject.SetActive(true);
-            highlightImage.gameObject.SetActive(false);
+            // image.gameObject.SetActive(true);
+            // highlightImage.gameObject.SetActive(false);
         }
 
         public void Initialize(Action onClick)
@@ -35,20 +35,20 @@ namespace StreetFoodGame.Presentation.Components
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            Color alpha = image.color;
-            alpha.a = 0f;
-            image.color = alpha;
+            // Color alpha = image.color;
+            // alpha.a = 0f;
+            // image.color = alpha;
 
-            highlightImage.gameObject.SetActive(true);
+            // highlightImage.gameObject.SetActive(true);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            Color alpha = image.color;
-            alpha.a = 1f;
-            image.color = alpha;
+            // Color alpha = image.color;
+            // alpha.a = 1f;
+            // image.color = alpha;
 
-            highlightImage.gameObject.SetActive(false);
+            // highlightImage.gameObject.SetActive(false);
         }
     }
 }

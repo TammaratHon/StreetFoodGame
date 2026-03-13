@@ -13,18 +13,21 @@ namespace StreetFoodGame.Presentation.Presenters
         private readonly IApplicationService applicationService;
         private readonly CookingPresenter cookingPresenter;
         private readonly OrderQueuePresenter orderQueuePresenter;
+        private readonly CookingUseCase cookingUseCase;
 
         public GameplayPresenter(
             IGameplayView view,
             IApplicationService applicationService,
             CookingPresenter cookingPresenter,
-            OrderQueuePresenter orderQueuePresenter
+            OrderQueuePresenter orderQueuePresenter,
+            CookingUseCase cookingUseCase
         )
         {
             this.view = view;
             this.applicationService = applicationService;
             this.cookingPresenter = cookingPresenter;
             this.orderQueuePresenter = orderQueuePresenter;
+            this.cookingUseCase = cookingUseCase;
         }
 
         public void Start()
@@ -53,6 +56,8 @@ namespace StreetFoodGame.Presentation.Presenters
         private void HandleCleanButtonPressed()
         {
             // Additional logic to handle the clean button press can be added here.
+            cookingUseCase.Reset();
+            cookingPresenter.ResetCooking();
         }
 
         private void HandleRecipeButtonPressed()

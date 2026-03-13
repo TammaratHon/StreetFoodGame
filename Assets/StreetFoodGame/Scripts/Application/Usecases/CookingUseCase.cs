@@ -8,7 +8,7 @@ namespace StreetFoodGame.Application.Usecases
     public class CookingUseCase
     {
         private readonly List<Recipe> recipes = new List<Recipe>();
-        private readonly HashSet<string> currentIngredients = new HashSet<string>();
+        private readonly List<string> currentIngredients = new List<string>();
 
         private int currentCookCount = 0;
         public int CurrentCookCount => currentCookCount;
@@ -22,10 +22,7 @@ namespace StreetFoodGame.Application.Usecases
 
         public void AddIngredient(string ingredientKey)
         {
-            if(!currentIngredients.Contains(ingredientKey))
-            {
-                currentIngredients.Add(ingredientKey);
-            }
+            currentIngredients.Add(ingredientKey);
         }
 
         public void RemoveIngredient(string ingredientKey)
@@ -36,18 +33,21 @@ namespace StreetFoodGame.Application.Usecases
             }
         }
 
+        public void Reset()
+        {
+            currentIngredients.Clear();
+            currentCookCount = 0;
+            currentStepIndex = 0;
+        }
+
         public bool ProcessCookingCount()
         {
             if(!HasIngredients()) return false; // No ingredients, cannot process cook count
             if(!CheckIngredientsMatchAnyRecipe()) return false; // Ingredients don't match any recipe, cannot process cook count
-            if(currentCookCount > 3)
-            {
-                currentCookCount = 0;
-            }
 
             currentCookCount++;
-            if(currentCookCount > 3) return true;
-            return false;
+
+            return true;
         }
 
         public bool ProcessCookingStep(out Menu menu)
@@ -66,8 +66,15 @@ namespace StreetFoodGame.Application.Usecases
             {
                 currentStepIndex++;
             }
+
+            currentCookCount = 0; // Reset cook count for the next step
                 
             return true;
+        }
+
+        public bool IsCookingCountAtMax()
+        {
+            return currentCookCount >= 3;
         }
 
         private bool CheckIngredientsMatchAnyRecipe()
