@@ -72,11 +72,11 @@ namespace StreetFoodGame.Application.Usecases
                 if (allMatch && currentStepIndex == rec.IngredientsByStep.Count - 1) 
                 {
                     currentStepIndex = 0; // Reset for next cooking session
+                    currentIngredients.Clear(); // Clear ingredients for the next cooking session
                     menu = new Menu(rec.Name);
+                    return true;
                 }
-
-                // If all ingredients match, move to the next step of the recipe
-                if(allMatch)
+                else if(allMatch)
                 {
                     currentIngredients.Clear(); // Clear ingredients for the next step
                     currentStepIndex++;
@@ -95,6 +95,11 @@ namespace StreetFoodGame.Application.Usecases
         public bool IsIngredientSlotAvailable()
         {
             return currentIngredients.Count < 5;
+        }
+
+        public int GetCurrentIngredientCount()
+        {
+            return currentIngredients.Count;
         }
     }
 }

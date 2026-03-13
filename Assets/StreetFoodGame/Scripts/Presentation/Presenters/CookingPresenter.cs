@@ -30,32 +30,51 @@ namespace StreetFoodGame.Presentation.Presenters
             cookingView.OnIngredientButtonPressed += HandleIngredientButtonPressed;
             cookingView.OnCookButtonPressed += HandleCookButtonPressed;
             cookingView.Show();
-            cookingStepView.ShowCookingStep(cookingUseCase.CurrentStepIndex);
+            cookingStepView.ShowCookingStep(0);
         }
 
         private void HandleIngredientButtonPressed(string ingredientKey)
         {
-            if(cookingUseCase.IsIngredientContained(ingredientKey) && cookingUseCase.IsIngredientSlotAvailable())
+            if (cookingUseCase.IsIngredientContained(ingredientKey))
             {
                 cookingUseCase.RemoveIngredient(ingredientKey);
                 cookingStepView.HideIngredient(ingredientKey);
+                if (cookingUseCase.GetCurrentIngredientCount() == 0 &&
+                    cookingUseCase.CurrentStepIndex == 0)
+                {
+                    cookingStepView.ShowCookingStep(0);
+                }
+
+                return;
             }
-            else
+            
+            if (!cookingUseCase.IsIngredientContained(ingredientKey) && cookingUseCase.IsIngredientSlotAvailable())
             {
                 cookingUseCase.AddIngredient(ingredientKey);
                 cookingStepView.ShowIngredient(
                     ingredientKey,
                     spriteProviderService.LoadSprite(ingredientKey)
                 );
+                if (cookingUseCase.GetCurrentIngredientCount() == 1 &&
+                    cookingUseCase.CurrentStepIndex == 0)
+                {
+                    cookingStepView.ShowCookingStep(1);
+                }
             }
         }
 
         private void HandleCookButtonPressed()
         {
-            if(cookingUseCase.Cook(out Menu cookedMenu))
+            if (cookingUseCase.Cook(out Menu cookedMenu))
             {
                 cookingStepView.HideAllIngredients();
-                cookingStepView.ShowCookingStep(cookingUseCase.CurrentStepIndex);
+                if(cookingUseCase.CurrentStepIndex == 0)
+                {
+                    cookingStepView.ShowCookingStep(0);
+                } else
+                {
+                    cookingStepView.ShowCookingStep(cookingUseCase.CurrentStepIndex + 1);
+                }
             }
         }
 
