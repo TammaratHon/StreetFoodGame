@@ -5,10 +5,9 @@ namespace StreetFoodGame.Infrastructure.Services
 {
     public class UnityResourceSpriteProvider : ISpriteProviderService
     {
-        public object LoadSprite(string spriteName)
+        public object LoadSprite(string spritePath)
         {
-            string path = $"Graphics2D/IngredientIcons/Highlight/{spriteName}";
-            return Resources.Load<Sprite>(path);
+            return Resources.Load<Sprite>(spritePath);
         }
     }
 }
