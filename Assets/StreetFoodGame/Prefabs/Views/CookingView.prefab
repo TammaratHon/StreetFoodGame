@@ -778,6 +778,7 @@ GameObject:
   - component: {fileID: 5296185168708812493}
   - component: {fileID: 6916496847626588407}
   - component: {fileID: 7714255145989841748}
+  - component: {fileID: 9107179075579451624}
   m_Layer: 0
   m_Name: ChairWithRadio
   m_TagString: Untagged
@@ -832,7 +833,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 99eceb10918f7894a884da0a8b6794ec, type: 3}
+  m_Sprite: {fileID: -351091291, guid: ad7ad31684f41484db043e1060050ce7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -842,6 +843,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &9107179075579451624
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801262509994446129}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4c99fdd956b802e4cbfafec69527ef11, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1971997103291618496
 GameObject:
   m_ObjectHideFlags: 0
@@ -2356,7 +2378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac352e784b771bc458b4efd98aaa773f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: Papaya
+  key: GreenBean
   ingredientImage: {fileID: 3249054765316632971}
   highlightImage: {fileID: 6310468915157189012}
 --- !u!1 &4035825482930349168
@@ -3898,6 +3920,7 @@ MonoBehaviour:
   - {fileID: 4503375121996517213}
   - {fileID: 8903153422720085676}
   - {fileID: 8724861623531120585}
+  - {fileID: 8582024697474352240}
   - {fileID: 8576301646323509550}
   - {fileID: 1575051168104825789}
   - {fileID: 1677483501113723173}
@@ -3910,12 +3933,6 @@ MonoBehaviour:
   - {fileID: 2127296721215061810}
   - {fileID: 3273862510555241070}
   - {fileID: 5942778788968069688}
-  _cookingIngredient:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   _cookButton: {fileID: 3942712039816768731}
 --- !u!1 &5522855452323914684
 GameObject:
@@ -4133,7 +4150,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -714657482, guid: 3728fe90daca5a34daf2ade640c864fa, type: 3}
+  m_Sprite: {fileID: -1611924405, guid: ad7ad31684f41484db043e1060050ce7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

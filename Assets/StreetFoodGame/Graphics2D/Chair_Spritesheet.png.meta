@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3728fe90daca5a34daf2ade640c864fa
+guid: ad7ad31684f41484db043e1060050ce7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,91 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Animate_Fan_0
+      name: 01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 384
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6d13e5b89fafad4b886e5cdc3621216
+      internalID: -351091291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01_1
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1024
+        width: 384
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5672c0b87722b604186447e7ee1810f0
+      internalID: 1039008957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 384
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16539ec868a6303418a711f1ac3eefe3
+      internalID: -1509124132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 512
+        width: 384
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ced3e4831361334dbf4043ec7398bd2
+      internalID: -1611924405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01_4
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1eb81aa1e2933b44fb0bf243ec7a63d6
-      internalID: -714657482
+      spriteID: d1943555e0247d140b153cb65a2c4284
+      internalID: 820285018
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animate_Fan_1
+      name: 01_5
       rect:
         serializedVersion: 2
         x: 384
@@ -145,29 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e35ec7fdbd84b9f4d89066645a83a17c
-      internalID: -1488268191
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Animate_Fan_2
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 384
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 77cf28e8ca0facc479b99ab7abbc945a
-      internalID: -2056476858
+      spriteID: bc78125467d932444ab30bcdfa785397
+      internalID: 598735458
       vertices: []
       indices: 
       edges: []
@@ -175,7 +238,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 3c2fbc95045512b40a6dc084e3ee93d7
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -183,9 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Animate_Fan_0: -714657482
-      Animate_Fan_1: -1488268191
-      Animate_Fan_2: -2056476858
+      01_0: -351091291
+      01_1: 1039008957
+      01_2: -1509124132
+      01_3: -1611924405
+      01_4: 820285018
+      01_5: 598735458
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
