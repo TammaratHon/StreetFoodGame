@@ -31,6 +31,7 @@ namespace StreetFoodGame.Presentation.Presenters
             cookingView.OnCookButtonPressed += HandleCookButtonPressed;
             cookingView.Show();
             cookingStepView.ShowCookingStep(0);
+            cookingStepView.ShowCookingGauge(0);
         }
 
         private void HandleIngredientButtonPressed(string ingredientKey)
@@ -65,15 +66,24 @@ namespace StreetFoodGame.Presentation.Presenters
 
         private void HandleCookButtonPressed()
         {
-            if (cookingUseCase.Cook(out Menu cookedMenu))
+            bool processed = cookingUseCase.ProcessCookingCount();
+
+            cookingStepView.ShowCookingGauge(cookingUseCase.CurrentCookCount);
+            if(processed)
             {
-                cookingStepView.HideAllIngredients();
-                if(cookingUseCase.CurrentStepIndex == 0)
+                cookingStepView.ShowCookingGauge(0); // Reset gauge after processing cook count
+
+                bool stepProcessed = cookingUseCase.ProcessCookingStep(out Menu cookedMenu);
+                if(stepProcessed)
                 {
-                    cookingStepView.ShowCookingStep(0);
-                } else
-                {
-                    cookingStepView.ShowCookingStep(cookingUseCase.CurrentStepIndex + 1);
+                    cookingStepView.HideAllIngredients();
+                    cookingStepView.ShowCookingStep(
+                        cookedMenu == null ?
+                        cookingUseCase.CurrentStepIndex + 1 :
+                        0
+                    );
+                    if(cookedMenu != null)
+                        UnityEngine.Debug.Log($"Cooked Menu: {cookedMenu.Name}");
                 }
             }
         }

@@ -13,6 +13,6 @@ public class GameStarter : IStartable
 
     public void Start()
     {
-        applicationService.ChangeState(AppState.MainMenu);
+        applicationService.ChangeState(AppState.Gameplay);
     }
 }

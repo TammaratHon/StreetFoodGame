@@ -9,11 +9,13 @@ namespace StreetFoodGame.Presentation.Views
     {
         [SerializeField] private List<CookingIngredient> _cookingIngredients;
         [SerializeField] private List<GameObject> _cookingSteps;
+        [SerializeField] private List<GameObject> _cookingGauges;
         
         private void Awake()
         {
             _cookingIngredients.ForEach(ingredient => ingredient.gameObject.SetActive(false));
             _cookingSteps.ForEach(step => step.SetActive(false));
+            _cookingGauges.ForEach(gauge => gauge.SetActive(false));
         }
 
         public void Show()
@@ -24,6 +26,14 @@ namespace StreetFoodGame.Presentation.Views
         public void Hide()
         {
             gameObject.SetActive(false);
+        }
+
+        public void ShowCookingGauge(int gaugeIndex)
+        {
+            if (gaugeIndex < 0 || gaugeIndex >= _cookingGauges.Count) return;
+
+            _cookingGauges.ForEach(gauge => gauge.SetActive(false));
+            _cookingGauges[gaugeIndex].SetActive(true);
         }
 
         public void ShowCookingStep(int stepIndex)
