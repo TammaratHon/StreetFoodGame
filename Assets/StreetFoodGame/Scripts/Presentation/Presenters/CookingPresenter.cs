@@ -1,8 +1,11 @@
 using System;
 using Cysharp.Threading.Tasks;
+
+using StreetFoodGame.Domain.Enums;
+using StreetFoodGame.Domain.Entities;
+
 using StreetFoodGame.Application.Interfaces;
 using StreetFoodGame.Application.Usecases;
-using StreetFoodGame.Domain.Entities;
 
 namespace StreetFoodGame.Presentation.Presenters
 {
@@ -11,6 +14,7 @@ namespace StreetFoodGame.Presentation.Presenters
         private readonly ICookingView cookingView;
         private readonly ICookingStepView cookingStepView;
         private readonly ISpriteProviderService spriteProviderService;
+        private readonly IAudioService audioService;
         private readonly CookingUseCase cookingUseCase;
 
         private Action onCookButtonPressed;
@@ -19,12 +23,16 @@ namespace StreetFoodGame.Presentation.Presenters
             ICookingView cookingView,
             ICookingStepView cookingStepView,
             ISpriteProviderService spriteProviderService,
+            IAudioService audioService,
             CookingUseCase cookingUseCase
         )
         {
             this.cookingView = cookingView;
             this.cookingStepView = cookingStepView;
+
             this.spriteProviderService = spriteProviderService;
+            this.audioService = audioService;
+
             this.cookingUseCase = cookingUseCase;
         }
 
@@ -42,6 +50,8 @@ namespace StreetFoodGame.Presentation.Presenters
         {
             if(cookingUseCase.IsIngredientSlotAvailable())
             {
+                audioService.PlayAudio(AudioSourceType.SFX, SoundId.BUTTON_POP);
+                
                 cookingUseCase.AddIngredient(ingredientKey);
                 cookingStepView.ShowIngredient(
                     ingredientKey,
