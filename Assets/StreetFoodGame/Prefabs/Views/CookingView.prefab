@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 287809441601266959}
   - component: {fileID: 3273862510555241070}
   m_Layer: 0
-  m_Name: Cooked_2
+  m_Name: GrilledChicken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac352e784b771bc458b4efd98aaa773f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: Cooked_2
+  key: GrilledChicken
   ingredientImage: {fileID: 5123606910349534630}
   highlightImage: {fileID: 8209744303352115759}
 --- !u!1 &291162556962915025
@@ -833,7 +833,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -351091291, guid: ad7ad31684f41484db043e1060050ce7, type: 3}
+  m_Sprite: {fileID: 345613630, guid: ea898a54f041d294891e2dd7c29ebb34, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -864,6 +864,43 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1826157937685887016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8065772689667940098}
+  m_Layer: 0
+  m_Name: Mortar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8065772689667940098
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826157937685887016}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7624534746886297472}
+  - {fileID: 1534844718383387855}
+  m_Father: {fileID: 8199744310271983775}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 331, y: -84.5}
+  m_SizeDelta: {x: 320, y: 384}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1971997103291618496
 GameObject:
   m_ObjectHideFlags: 0
@@ -2690,6 +2727,81 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &4427508407920326308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1534844718383387855}
+  - component: {fileID: 16399766991111541}
+  - component: {fileID: 4481622793175548170}
+  m_Layer: 0
+  m_Name: MortarB
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1534844718383387855
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4427508407920326308}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8065772689667940098}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 320, y: 384}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &16399766991111541
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4427508407920326308}
+  m_CullTransparentMesh: 1
+--- !u!114 &4481622793175548170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4427508407920326308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 135, y: 100, z: 155, w: 355}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 53376500eba647141a666cb804f12920, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &4533383156967706368
 GameObject:
   m_ObjectHideFlags: 0
@@ -3013,6 +3125,81 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &4702746733874537604
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7624534746886297472}
+  - component: {fileID: 8088741351872703919}
+  - component: {fileID: 6446144196219632263}
+  m_Layer: 0
+  m_Name: MortarF
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7624534746886297472
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4702746733874537604}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8065772689667940098}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 320, y: 384}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8088741351872703919
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4702746733874537604}
+  m_CullTransparentMesh: 1
+--- !u!114 &6446144196219632263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4702746733874537604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 135, y: 100, z: 155, w: 355}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 4f0376c033a4afe4699c1d134b90de13, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &4746442388664789214
 GameObject:
   m_ObjectHideFlags: 0
@@ -3175,7 +3362,7 @@ GameObject:
   - component: {fileID: 2914862552811217090}
   - component: {fileID: 5942778788968069688}
   m_Layer: 0
-  m_Name: Cooked_3
+  m_Name: GrilledPork
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3258,7 +3445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac352e784b771bc458b4efd98aaa773f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: Cooked_3
+  key: GrilledPork
   ingredientImage: {fileID: 5680512256636947686}
   highlightImage: {fileID: 555096422620776603}
 --- !u!1 &4981333251624305757
@@ -3816,14 +4003,14 @@ MonoBehaviour:
   - {fileID: 6019859389583513951}
   - {fileID: 4758430008969021918}
   - {fileID: 2396180317571459586}
-  - {fileID: 5369757345432952171}
-  - {fileID: 6256522512612065365}
+  _completedIngredientButtons:
   - {fileID: 2127296721215061810}
   - {fileID: 3273862510555241070}
   - {fileID: 5942778788968069688}
+  - {fileID: 6256522512612065365}
+  - {fileID: 5369757345432952171}
   _cookButton: {fileID: 5607833934841419288}
   avatarAnimator: {fileID: 4453077940237576413}
-  resultImage: {fileID: 0}
 --- !u!1 &5522855452323914684
 GameObject:
   m_ObjectHideFlags: 0
@@ -4043,7 +4230,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1722232052, guid: 38ed76c16eeb39a4488d309ae07d3b57, type: 3}
+  m_Sprite: {fileID: 1646398217, guid: 38ed76c16eeb39a4488d309ae07d3b57, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4211,7 +4398,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1611924405, guid: ad7ad31684f41484db043e1060050ce7, type: 3}
+  m_Sprite: {fileID: -2016639442, guid: ea898a54f041d294891e2dd7c29ebb34, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4259,7 +4446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2937762341015462874
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4502,7 +4689,7 @@ GameObject:
   - component: {fileID: 8719762602810864937}
   - component: {fileID: 2127296721215061810}
   m_Layer: 0
-  m_Name: Cooked_1
+  m_Name: GrilledFish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4585,7 +4772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac352e784b771bc458b4efd98aaa773f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: Cooked_1
+  key: GrilledFish
   ingredientImage: {fileID: 5540470620462288895}
   highlightImage: {fileID: 7960484947218026753}
 --- !u!1 &7394126280988588716
@@ -4972,6 +5159,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8065772689667940098}
   - {fileID: 5021079802933162876}
   - {fileID: 7799820201926343302}
   - {fileID: 8234263245478563882}
