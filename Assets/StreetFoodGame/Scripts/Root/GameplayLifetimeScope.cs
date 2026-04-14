@@ -62,6 +62,7 @@ namespace StreetFoodGame.Root
             builder.Register<StartGameUseCase>(Lifetime.Scoped);
             builder.Register<ReceiveOrderUseCase>(Lifetime.Scoped);
             builder.Register<CookingUseCase>(Lifetime.Scoped);
+            builder.Register<ServeUsecase>(Lifetime.Scoped);
 
             // Scene-specific repositories
             builder.Register<IRecipeRepository, RecipeRepository>(Lifetime.Scoped);

@@ -8,11 +8,13 @@ namespace StreetFoodGame.Presentation.Views
     public class CookingView : MonoBehaviour, ICookingView
     {
         [SerializeField] private IngredientButton[] _ingredientButton;
+        [SerializeField] private IngredientButton[] _completedIngredientButtons;
 
         [SerializeField] private CookingButton _cookButton;
         [SerializeField] private AvatarAnimator avatarAnimator;
 
         public event Action<string> OnIngredientButtonPressed;
+        public event Action<string> OnCompletedIngredientButtonPressed;
         public event Action OnCookButtonPressed;
 
         private void Awake()
@@ -20,6 +22,11 @@ namespace StreetFoodGame.Presentation.Views
             foreach (var button in _ingredientButton)
             {
                 button.Initialize(() => OnIngredientButtonPressed?.Invoke(button.Key));
+            }
+
+            foreach (var button in _completedIngredientButtons)
+            {
+                button.Initialize(() => OnCompletedIngredientButtonPressed?.Invoke(button.Key));
             }
 
             _cookButton.Initialize(() => OnCookButtonPressed?.Invoke());

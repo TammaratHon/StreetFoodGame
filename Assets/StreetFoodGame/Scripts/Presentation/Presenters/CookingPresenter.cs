@@ -16,15 +16,18 @@ namespace StreetFoodGame.Presentation.Presenters
         private readonly ISpriteProviderService spriteProviderService;
         private readonly IAudioService audioService;
         private readonly CookingUseCase cookingUseCase;
+        private readonly ServeUsecase serveUsecase;
 
         private Action onCookButtonPressed;
+        private bool isCooked;
 
         public CookingPresenter(
             ICookingView cookingView,
             ICookingStepView cookingStepView,
             ISpriteProviderService spriteProviderService,
             IAudioService audioService,
-            CookingUseCase cookingUseCase
+            CookingUseCase cookingUseCase,
+            ServeUsecase serveUsecase
         )
         {
             this.cookingView = cookingView;
@@ -34,11 +37,14 @@ namespace StreetFoodGame.Presentation.Presenters
             this.audioService = audioService;
 
             this.cookingUseCase = cookingUseCase;
+            this.serveUsecase = serveUsecase;
         }
 
         public void StartCooking()
         {
+            isCooked = false;
             cookingView.OnIngredientButtonPressed += HandleIngredientButtonPressed;
+            cookingView.OnCompletedIngredientButtonPressed += HandleCompletedIngredientButtonPressed;
             onCookButtonPressed += async () => await HandleCookButtonPressed();
             cookingView.OnCookButtonPressed += onCookButtonPressed;
             cookingView.Show();
@@ -48,6 +54,8 @@ namespace StreetFoodGame.Presentation.Presenters
 
         private void HandleIngredientButtonPressed(string ingredientKey)
         {
+            if(isCooked) return;
+            
             if(cookingUseCase.IsIngredientSlotAvailable())
             {
                 audioService.PlayAudio(AudioSourceType.SFX, SoundId.BUTTON_POP);
@@ -65,6 +73,23 @@ namespace StreetFoodGame.Presentation.Presenters
                 {
                     cookingStepView.ShowCookingStep(1);
                 }
+            }
+        }
+
+        private void HandleCompletedIngredientButtonPressed(string ingredientKey)
+        {
+            if(!isCooked) return;
+
+            if(serveUsecase.IsIngredientSlotAvailable())
+            {
+                serveUsecase.AddFood(ingredientKey);
+
+                audioService.PlayAudio(AudioSourceType.SFX, SoundId.BUTTON_POP);
+
+                cookingStepView.ShowCookingIcon(
+                    ingredientKey,
+                    spriteProviderService.LoadSpriteInSheet("Graphics2D/SpriteSheets/FoodIcon_Spritesheet/", ingredientKey)
+                );
             }
         }
 
@@ -92,6 +117,8 @@ namespace StreetFoodGame.Presentation.Presenters
                         {
                             if(cookedMenu != null)
                             {
+                                isCooked = true;
+                                serveUsecase.AddFood(cookedMenu.Name);
                                 cookingStepView.ShowReadyToServeStep();
                                 cookingStepView.ShowCookingIcon(
                                     cookedMenu.Name,
@@ -112,6 +139,7 @@ namespace StreetFoodGame.Presentation.Presenters
 
         public void ResetCooking()
         {
+            isCooked = false;
             cookingUseCase.Reset();
             cookingStepView.HideAllCookingIcons();
             cookingStepView.ShowCookingStep(0);
@@ -122,6 +150,7 @@ namespace StreetFoodGame.Presentation.Presenters
         public void Dispose()
         {
             cookingView.OnIngredientButtonPressed -= HandleIngredientButtonPressed;
+            cookingView.OnCompletedIngredientButtonPressed -= HandleCompletedIngredientButtonPressed;
             cookingView.OnCookButtonPressed -= onCookButtonPressed;
         }
     }

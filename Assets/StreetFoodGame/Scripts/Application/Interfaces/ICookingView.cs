@@ -8,6 +8,7 @@ namespace StreetFoodGame.Application.Interfaces
         void PlayAvatarIdleAnimation();
 
         event Action<string> OnIngredientButtonPressed;
+        event Action<string> OnCompletedIngredientButtonPressed;
         event Action OnCookButtonPressed;
     }
 }
