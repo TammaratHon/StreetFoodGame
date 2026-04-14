@@ -1,8 +1,11 @@
-using UnityEngine;
-using System.Collections;
+using System;
 using System.Collections.Generic;
+
+using UnityEngine;
+
 using StreetFoodGame.Application.Interfaces;
 using StreetFoodGame.Presentation.Components;
+
 using Cysharp.Threading.Tasks;
 
 namespace StreetFoodGame.Presentation.Views
@@ -12,6 +15,7 @@ namespace StreetFoodGame.Presentation.Views
         [SerializeField] private List<CookingIngredient> _cookingIngredients;
         [SerializeField] private List<GameObject> _cookingSteps;
         [SerializeField] private List<GameObject> _cookingGauges;
+        [SerializeField] private GameObject _readyToServeStep;
 
         [Header("Locators")]
         [SerializeField] private List<Transform> ingredientLocatorsStep1;
@@ -27,6 +31,7 @@ namespace StreetFoodGame.Presentation.Views
             _cookingIngredients.ForEach(ingredient => ingredient.gameObject.SetActive(false));
             _cookingSteps.ForEach(step => step.SetActive(false));
             _cookingGauges.ForEach(gauge => gauge.SetActive(false));
+            _readyToServeStep.SetActive(false);
         }
 
         public void Show()
@@ -58,9 +63,16 @@ namespace StreetFoodGame.Presentation.Views
 
             _cookingSteps.ForEach(step => step.SetActive(false));
             _cookingSteps[stepIndex].SetActive(true);
+            _readyToServeStep.SetActive(false);
         }
 
-        public void ShowIngredient(string ingredientKey, object spriteAsset)
+        public void ShowReadyToServeStep()
+        {
+            _cookingSteps.ForEach(step => step.SetActive(false));
+            _readyToServeStep.SetActive(true);
+        }
+
+        public void ShowCookingIcon(string ingredientKey, object spriteAsset)
         {
             int activeIngredientCount = _cookingIngredients.FindAll(ingredient => ingredient.gameObject.activeSelf).Count;
             currentIngredientLocators = activeIngredientCount switch
@@ -90,7 +102,7 @@ namespace StreetFoodGame.Presentation.Views
             }
         }
 
-        public void HideIngredient(string ingredientKey)
+        public void HideCookingIcon(string ingredientKey)
         {
             foreach (var ingredient in _cookingIngredients)
             {
@@ -101,9 +113,22 @@ namespace StreetFoodGame.Presentation.Views
             }
         }
 
-        public void HideAllIngredients()
+        public void HideAllCookingIcons(Action onComplete = null)
         {
-            _cookingIngredients.ForEach(ingredient => ingredient.HideIngredient());
+            var activeIngredients = _cookingIngredients.FindAll(ingredient => ingredient.gameObject.activeSelf);
+
+            for(int i = 0; i < activeIngredients.Count; i++)
+            {
+                int captureIndex = i;
+    
+                activeIngredients[captureIndex].HideIngredient(() =>
+                {
+                    if (captureIndex == activeIngredients.Count - 1)
+                    {
+                        onComplete?.Invoke();
+                    }
+                });
+            }
         }
     }
 }

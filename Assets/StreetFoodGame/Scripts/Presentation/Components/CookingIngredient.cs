@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,7 +37,7 @@ namespace StreetFoodGame.Presentation.Components
             }
         }
 
-        public void HideIngredient()
+        public void HideIngredient(Action onComplete = null)
         {
             if(ingredientImage == null) return;
             ingredientKey = "";
@@ -44,9 +45,10 @@ namespace StreetFoodGame.Presentation.Components
             if(animator == null)
             {
                 gameObject.SetActive(false);
+                onComplete?.Invoke();
             } else
             {
-                animator.PlayHideAnimation();
+                animator.PlayHideAnimation(onComplete);
             }
         }
     }

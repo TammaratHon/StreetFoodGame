@@ -53,7 +53,7 @@ namespace StreetFoodGame.Presentation.Presenters
                 audioService.PlayAudio(AudioSourceType.SFX, SoundId.BUTTON_POP);
                 
                 cookingUseCase.AddIngredient(ingredientKey);
-                cookingStepView.ShowIngredient(
+                cookingStepView.ShowCookingIcon(
                     ingredientKey,
                     spriteProviderService.LoadSprite("Graphics2D/IngredientIcons/Highlight/" + ingredientKey)
                 );
@@ -87,19 +87,25 @@ namespace StreetFoodGame.Presentation.Presenters
                 if(stepProcessed)
                 {
                     cookingView.PlayAvatarIdleAnimation();
-                    cookingStepView.HideAllIngredients();
+                    cookingStepView.HideAllCookingIcons(
+                        () =>
+                        {
+                            if(cookedMenu != null)
+                            {
+                                cookingStepView.ShowReadyToServeStep();
+                                cookingStepView.ShowCookingIcon(
+                                    cookedMenu.Name,
+                                    spriteProviderService.LoadSprite($"Graphics2D/Menus/{cookedMenu.Name}")
+                                );
+                            }
+                        }
+                    );
                     cookingStepView.ShowCookingStep(
                         cookedMenu == null ?
                         cookingUseCase.CurrentStepIndex + 1 :
                         0
                     );
 
-                    if(cookedMenu != null)
-                    {
-                        cookingView.ShowCookingResult(
-                            spriteProviderService.LoadSprite($"Graphics2D/Menus/{cookedMenu.Name}")
-                        );
-                    }
                 }
             }
         }
@@ -107,7 +113,7 @@ namespace StreetFoodGame.Presentation.Presenters
         public void ResetCooking()
         {
             cookingUseCase.Reset();
-            cookingStepView.HideAllIngredients();
+            cookingStepView.HideAllCookingIcons();
             cookingStepView.ShowCookingStep(0);
             cookingStepView.ShowCookingGauge(0).Forget();
             cookingView.PlayAvatarIdleAnimation();
