@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cea5acd0df4bb0844bb44ebc6e48586d
+guid: 3f333f344fbab1b41993045ea08c2ecd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,76 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 02_0
+      name: CookingState_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 416
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d02c220d844605f46b6fd99f7caa9bdf
+      internalID: -1801895080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CookingState_1
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 640
+        width: 416
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd06d9a991c59aa48b7dce2f2e6c1498
+      internalID: -252063460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CookingState_2
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 640
+        width: 416
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e7f49eb59f13884ca810a6614a71c9a
+      internalID: -483777691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CookingState_3
       rect:
         serializedVersion: 2
         x: 0
         y: 512
-        width: 256
-        height: 256
+        width: 416
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36349afe9e00c164fa7157774fe04da5
-      internalID: -1795162223
+      spriteID: bb1521cc7bf77cb4f8f2d43e3832d258
+      internalID: -1503260424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 02_1
+      name: CookingState_4
       rect:
         serializedVersion: 2
-        x: 256
+        x: 416
         y: 512
-        width: 256
-        height: 256
+        width: 416
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88b4e4d2b5b8f3a4a907ecdc0976f042
-      internalID: -1665021767
+      spriteID: 327d7608fb990fe4a98f7df789f1ec6d
+      internalID: -1078117246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 02_2
+      name: CookingState_5
       rect:
         serializedVersion: 2
-        x: 512
+        x: 832
         y: 512
-        width: 256
-        height: 256
+        width: 416
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a1306268f376b940b468f0e564dab82
-      internalID: -1566874375
+      spriteID: af61e2beeec095f4099c9fc3fd28cac0
+      internalID: 2119393747
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 02_3
+      name: CookingState_6
       rect:
         serializedVersion: 2
-        x: 768
-        y: 512
-        width: 256
-        height: 256
+        x: 0
+        y: 384
+        width: 416
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43676938d25d000498519b24f607ddbf
-      internalID: 1730544803
+      spriteID: a4aaa7179c648c440b7ecc2d07f88482
+      internalID: 157276995
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 02_4
+      name: CookingState_7
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 512
-        width: 256
-        height: 256
+        x: 416
+        y: 384
+        width: 416
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c604866ba63fff46adbbad9a3940fa6
-      internalID: -1870231605
+      spriteID: 84ea515f487e13e49a8268fdaabd0124
+      internalID: 1784782523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 02_5
+      name: CookingState_8
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 512
-        width: 256
-        height: 256
+        x: 832
+        y: 384
+        width: 416
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,62 +292,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6114dbb773ca84f4ba46aad960a52cb8
-      internalID: 817881120
+      spriteID: 906ce6588c6a8bb40aad6b261a7a160d
+      internalID: 783353540
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 02_6
-      rect:
-        serializedVersion: 2
-        x: 1536
-        y: 512
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e77fe0843bb6194981311fd4d03e92d
-      internalID: -1477192212
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 02_7
-      rect:
-        serializedVersion: 2
-        x: 1792
-        y: 512
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5cf69139059aa2e499c349edfe0b1a95
-      internalID: 95078747
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 02_8
+      name: CookingState_9
       rect:
         serializedVersion: 2
         x: 0
         y: 256
-        width: 256
-        height: 256
+        width: 416
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +313,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ccfc36d5179245249a404d2dcc586d1e
-      internalID: 1962265132
+      spriteID: dfd921c4b84d16545992eae09dffad5e
+      internalID: 1872849770
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 02_9
+      name: CookingState_10
       rect:
         serializedVersion: 2
-        x: 256
+        x: 416
         y: 256
-        width: 256
-        height: 256
+        width: 416
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,20 +334,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51f352a22f993b443a217a4c4214cd0c
-      internalID: -1296028176
+      spriteID: 82f5a96886827654db5df3e1b4312aae
+      internalID: 1325096818
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 02_10
+      name: CookingState_11
       rect:
         serializedVersion: 2
-        x: 512
+        x: 832
         y: 256
-        width: 256
-        height: 256
+        width: 416
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,20 +355,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 658c54db7b2c7b84ca4b057d2e270801
-      internalID: 1840326855
+      spriteID: 1d499438ab1448c4a9169d63c4e64202
+      internalID: 1488706081
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 02_11
+      name: CookingState_12
       rect:
         serializedVersion: 2
-        x: 768
-        y: 256
-        width: 256
-        height: 256
+        x: 0
+        y: 128
+        width: 416
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -355,20 +376,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 110094ad49dc5a345aa6d823f407ae77
-      internalID: -12111713
+      spriteID: 83656ccf4a4a1184692646943a04640b
+      internalID: -1213866831
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 02_12
+      name: CookingState_13
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 256
-        width: 256
-        height: 256
+        x: 416
+        y: 128
+        width: 416
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -376,20 +397,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37aa9901d67659d4995e292beaa28995
-      internalID: -1767859135
+      spriteID: 119e0868c5474504592654720636f83d
+      internalID: 2066472024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 02_13
+      name: CookingState_14
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 256
-        width: 256
-        height: 256
+        x: 832
+        y: 128
+        width: 416
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -397,62 +418,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7cf22bcecb1b9a479a6894084fdf8d4
-      internalID: -21924517
+      spriteID: 7749d5ead94dca445ba834f500f51c71
+      internalID: 678409775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 02_14
-      rect:
-        serializedVersion: 2
-        x: 1536
-        y: 256
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 38324d2c4f80c1547b6c63c7408ba25b
-      internalID: 227844484
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 02_15
-      rect:
-        serializedVersion: 2
-        x: 1792
-        y: 256
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3a387f0c95707f84d9befab1b42677b1
-      internalID: -1464350700
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 02_16
+      name: CookingState_15
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 256
-        height: 256
+        width: 416
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -460,20 +439,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17602dc6eb3d8e8449af91950f2bbef9
-      internalID: 2085684839
+      spriteID: 8d4e26f9ab0e0f646a5ba3c020778fc5
+      internalID: -227753778
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 02_17
+      name: CookingState_16
       rect:
         serializedVersion: 2
-        x: 256
+        x: 416
         y: 0
-        width: 256
-        height: 256
+        width: 416
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -481,92 +460,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49518eb90446de34fb60be27049e2582
-      internalID: 2045799951
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 02_18
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b853a140a39a7cc4caf285637efa1d65
-      internalID: -2064211682
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 02_19
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 68974322cd7cf8c4ba2270f37c222e69
-      internalID: 821073418
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 02_20
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a14618809d3fdda48a7152ecb64994a8
-      internalID: 1394651408
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 02_21
-      rect:
-        serializedVersion: 2
-        x: 1280
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87a5ac59ac64bd64ea190a3d9bb02fd9
-      internalID: -1193250931
+      spriteID: d82277e4a2936b848a07adfb9c8bf3bf
+      internalID: 847726858
       vertices: []
       indices: 
       edges: []
@@ -582,28 +477,23 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      02_0: -1795162223
-      02_1: -1665021767
-      02_10: 1840326855
-      02_11: -12111713
-      02_12: -1767859135
-      02_13: -21924517
-      02_14: 227844484
-      02_15: -1464350700
-      02_16: 2085684839
-      02_17: 2045799951
-      02_18: -2064211682
-      02_19: 821073418
-      02_2: -1566874375
-      02_20: 1394651408
-      02_21: -1193250931
-      02_3: 1730544803
-      02_4: -1870231605
-      02_5: 817881120
-      02_6: -1477192212
-      02_7: 95078747
-      02_8: 1962265132
-      02_9: -1296028176
+      CookingState_0: -1801895080
+      CookingState_1: -252063460
+      CookingState_10: 1325096818
+      CookingState_11: 1488706081
+      CookingState_12: -1213866831
+      CookingState_13: 2066472024
+      CookingState_14: 678409775
+      CookingState_15: -227753778
+      CookingState_16: 847726858
+      CookingState_2: -483777691
+      CookingState_3: -1503260424
+      CookingState_4: -1078117246
+      CookingState_5: 2119393747
+      CookingState_6: 157276995
+      CookingState_7: 1784782523
+      CookingState_8: 783353540
+      CookingState_9: 1872849770
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
