@@ -55,7 +55,7 @@ namespace StreetFoodGame.Presentation.Presenters
                 cookingUseCase.AddIngredient(ingredientKey);
                 cookingStepView.ShowCookingIcon(
                     ingredientKey,
-                    spriteProviderService.LoadSprite("Graphics2D/IngredientIcons/Highlight/" + ingredientKey)
+                    spriteProviderService.LoadSpriteInSheet("Graphics2D/SpriteSheets/FoodIcon_Spritesheet/", ingredientKey)
                 );
 
                 // Show first step when the first ingredient is added
@@ -95,7 +95,7 @@ namespace StreetFoodGame.Presentation.Presenters
                                 cookingStepView.ShowReadyToServeStep();
                                 cookingStepView.ShowCookingIcon(
                                     cookedMenu.Name,
-                                    spriteProviderService.LoadSprite($"Graphics2D/Menus/{cookedMenu.Name}")
+                                    spriteProviderService.LoadSpriteInSheet("Graphics2D/SpriteSheets/Somtam_Spritesheet/", cookedMenu.Name)
                                 );
                             }
                         }

@@ -9,5 +9,18 @@ namespace StreetFoodGame.Infrastructure.Services
         {
             return Resources.Load<Sprite>(spritePath);
         }
+
+        public object LoadSpriteInSheet(string sheetPath, string spriteName)
+        {
+            Sprite[] sprites = Resources.LoadAll<Sprite>(sheetPath);
+            foreach (var sprite in sprites)
+            {
+                if (sprite.name == spriteName)
+                {
+                    return sprite;
+                }
+            }
+            return null;
+        }
     }
 }
