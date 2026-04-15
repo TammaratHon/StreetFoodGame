@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Customer_Spritesheet_0
+      name: Bubble
       rect:
         serializedVersion: 2
         x: 0
@@ -118,7 +118,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -131,15 +131,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_1
+      name: Edge
       rect:
         serializedVersion: 2
-        x: 256
+        x: 258
         y: 1024
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,7 +152,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_2
+      name: BackgroundGreen
       rect:
         serializedVersion: 2
         x: 512
@@ -160,7 +160,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -173,7 +173,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_3
+      name: BackgroundYellow
       rect:
         serializedVersion: 2
         x: 768
@@ -181,7 +181,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -194,7 +194,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_4
+      name: BackgroundOrange
       rect:
         serializedVersion: 2
         x: 1024
@@ -202,7 +202,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -215,7 +215,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_5
+      name: BackgroundRed
       rect:
         serializedVersion: 2
         x: 1280
@@ -223,7 +223,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -236,7 +236,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_6
+      name: Customer1_Green
       rect:
         serializedVersion: 2
         x: 0
@@ -244,7 +244,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -257,7 +257,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_7
+      name: Customer1_Yellow
       rect:
         serializedVersion: 2
         x: 256
@@ -265,7 +265,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -278,7 +278,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_8
+      name: Customer1_Orange
       rect:
         serializedVersion: 2
         x: 512
@@ -286,7 +286,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -299,7 +299,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_9
+      name: Customer1_Red
       rect:
         serializedVersion: 2
         x: 768
@@ -307,7 +307,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -320,7 +320,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_10
+      name: Customer2_Green
       rect:
         serializedVersion: 2
         x: 1024
@@ -328,7 +328,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -341,7 +341,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_11
+      name: Customer2_Yellow
       rect:
         serializedVersion: 2
         x: 1280
@@ -349,7 +349,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -362,7 +362,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_12
+      name: Customer2_Orange
       rect:
         serializedVersion: 2
         x: 0
@@ -370,7 +370,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -383,7 +383,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_13
+      name: Customer2_Red
       rect:
         serializedVersion: 2
         x: 256
@@ -391,7 +391,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -404,7 +404,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_14
+      name: Customer3_Green
       rect:
         serializedVersion: 2
         x: 512
@@ -412,7 +412,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -425,7 +425,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_15
+      name: Customer3_Yellow
       rect:
         serializedVersion: 2
         x: 768
@@ -433,7 +433,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -446,7 +446,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_16
+      name: Customer3_Orange
       rect:
         serializedVersion: 2
         x: 1024
@@ -454,7 +454,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -467,7 +467,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_17
+      name: Customer3_Red
       rect:
         serializedVersion: 2
         x: 1280
@@ -475,7 +475,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -488,7 +488,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_18
+      name: Customer4_Green
       rect:
         serializedVersion: 2
         x: 0
@@ -496,7 +496,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -509,7 +509,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_19
+      name: Customer4_Yellow
       rect:
         serializedVersion: 2
         x: 256
@@ -517,7 +517,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -530,7 +530,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_20
+      name: Customer4_Orange
       rect:
         serializedVersion: 2
         x: 512
@@ -538,7 +538,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -551,7 +551,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_21
+      name: Customer4_Red
       rect:
         serializedVersion: 2
         x: 768
@@ -559,7 +559,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -572,7 +572,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_22
+      name: Customer5_Green
       rect:
         serializedVersion: 2
         x: 1024
@@ -580,7 +580,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -593,7 +593,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_23
+      name: Customer5_Yellow
       rect:
         serializedVersion: 2
         x: 1280
@@ -601,7 +601,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -614,7 +614,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_24
+      name: Customer5_Orange
       rect:
         serializedVersion: 2
         x: 0
@@ -622,7 +622,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -635,7 +635,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Customer_Spritesheet_25
+      name: Customer5_Red
       rect:
         serializedVersion: 2
         x: 256
@@ -643,7 +643,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -666,32 +666,32 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Customer_Spritesheet_0: -2049166227
-      Customer_Spritesheet_1: 1287028044
-      Customer_Spritesheet_10: 864548490
-      Customer_Spritesheet_11: 129317220
-      Customer_Spritesheet_12: -362619025
-      Customer_Spritesheet_13: 1111660685
-      Customer_Spritesheet_14: 1656728515
-      Customer_Spritesheet_15: 449070285
-      Customer_Spritesheet_16: 178224760
-      Customer_Spritesheet_17: 636954906
-      Customer_Spritesheet_18: -1857750542
-      Customer_Spritesheet_19: 446233581
-      Customer_Spritesheet_2: -60168820
-      Customer_Spritesheet_20: -741119137
-      Customer_Spritesheet_21: 2061950958
-      Customer_Spritesheet_22: -692619522
-      Customer_Spritesheet_23: 808678015
-      Customer_Spritesheet_24: -1470770899
-      Customer_Spritesheet_25: -614714430
-      Customer_Spritesheet_3: -1710418603
-      Customer_Spritesheet_4: -541717829
-      Customer_Spritesheet_5: 1710997073
-      Customer_Spritesheet_6: 1064459975
-      Customer_Spritesheet_7: 1737901758
-      Customer_Spritesheet_8: -997005646
-      Customer_Spritesheet_9: 61237383
+      BackgroundGreen: -60168820
+      BackgroundOrange: -541717829
+      BackgroundRed: 1710997073
+      BackgroundYellow: -1710418603
+      Bubble: -2049166227
+      Customer1_Green: 1064459975
+      Customer1_Orange: -997005646
+      Customer1_Red: 61237383
+      Customer1_Yellow: 1737901758
+      Customer2_Green: 864548490
+      Customer2_Orange: -362619025
+      Customer2_Red: 1111660685
+      Customer2_Yellow: 129317220
+      Customer3_Green: 1656728515
+      Customer3_Orange: 178224760
+      Customer3_Red: 636954906
+      Customer3_Yellow: 449070285
+      Customer4_Green: -1857750542
+      Customer4_Orange: -741119137
+      Customer4_Red: 2061950958
+      Customer4_Yellow: 446233581
+      Customer5_Green: -692619522
+      Customer5_Orange: -1470770899
+      Customer5_Red: -614714430
+      Customer5_Yellow: 808678015
+      Edge: 1287028044
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
