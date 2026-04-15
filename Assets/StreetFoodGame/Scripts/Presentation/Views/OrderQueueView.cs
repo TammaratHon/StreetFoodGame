@@ -63,10 +63,11 @@ namespace StreetFoodGame.Presentation.Views
                 {
                     string middleText = middleTexts[i];
                     middleText = middleText.Replace("-", $"<color=#E53888>{foods.ElementAt(i + 1).Key} {foods.ElementAt(i + 1).Value}</color>");
+                    sentencesBuilder.Append(" ");
                     sentencesBuilder.Append(middleText);
+                    sentencesBuilder.Append(" ");
                 }
 
-                sentencesBuilder.Append(" ");
                 sentencesBuilder.Append(endText);
                 
                 slot.SetCustomerOrderText(sentencesBuilder.ToString());
