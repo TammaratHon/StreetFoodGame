@@ -1,30 +1,34 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace StreetFoodGame.Presentation.Views
 {
     public class OrderSlotView : MonoBehaviour
     {
-        [SerializeField] private TMP_Text avatar;
-        [SerializeField] private TMP_Text[] foodIcons;
+        [SerializeField] private Image customerImage;
+        [SerializeField] private Image customerMoodImage;
+        [SerializeField] private TMP_Text customerOrderText;
+        [SerializeField] private TMP_Text customerFlavorText;
 
-        public void SetAvatar(string name)
+        public void SetCustomerImage(Sprite sprite)
         {
-            avatar.text = name;
+            customerImage.sprite = sprite;
         }
 
-        public void SetFoodIcons(string[] name)
+        public void SetCustomerMoodImage(Sprite sprite)
         {
-            foreach (var icon in foodIcons)
-            {
-                icon.gameObject.SetActive(false);
-            }
+            customerMoodImage.sprite = sprite;
+        }
 
-            for (int i = 0; i < name.Length; i++)
-            {
-                foodIcons[i].text = name[i];
-                foodIcons[i].gameObject.SetActive(true);
-            }
+        public void SetCustomerOrderText(string orderText)
+        {
+            customerOrderText.text = orderText;
+        }
+
+        public void SetCustomerFlavorText(string flavorText)
+        {
+            customerFlavorText.text = flavorText;
         }
     }
 }

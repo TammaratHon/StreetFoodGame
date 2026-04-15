@@ -5,7 +5,7 @@ namespace StreetFoodGame.Domain.Interfaces
 {
     public interface ICustomerRepository
     {
-        Customer GetCustomerByName(string customerName);
+        Customer GetCustomerByKey(string customerKey);
         Customer GetRandomCustomer();
         List<Customer> GetAllCustomers();
     }

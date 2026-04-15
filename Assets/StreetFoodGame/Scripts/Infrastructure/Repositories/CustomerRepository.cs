@@ -25,9 +25,9 @@ namespace StreetFoodGame.Infrastructure.Repositories
             return customerDataList;
         }
 
-        public Customer GetCustomerByName(string customerName)
+        public Customer GetCustomerByKey(string customerKey)
         {
-            return customerDataList.Find(customer => customer.Name == customerName);
+            return customerDataList.Find(customer => customer.Key == customerKey);
         }
 
         public Customer GetRandomCustomer()
@@ -44,7 +44,12 @@ namespace StreetFoodGame.Infrastructure.Repositories
 
         private Customer ConvertToCustomer(CustomerDataSO data)
         {
-            return new Customer(data.customerName);
+            return new Customer(
+                data.CustomerKey,
+                data.BeginSentences,
+                data.MiddleSentences,
+                data.EndSentences
+            );
         }
     }
 }
