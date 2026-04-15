@@ -108,7 +108,7 @@ namespace StreetFoodGame.Presentation.Presenters
             {
                 cookingStepView.ShowCookingGauge(0, 0.5f).Forget(); // Reset gauge after processing cook count
 
-                bool stepProcessed = cookingUseCase.ProcessCookingStep(out Menu cookedMenu);
+                bool stepProcessed = cookingUseCase.ProcessCookingStep(out Food cookedMenu);
                 if(stepProcessed)
                 {
                     cookingView.PlayAvatarIdleAnimation();

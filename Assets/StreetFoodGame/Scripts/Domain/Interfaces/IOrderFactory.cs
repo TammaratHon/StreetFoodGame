@@ -4,6 +4,6 @@ namespace StreetFoodGame.Domain.Interfaces
 {
     public interface IOrderFactory
     {
-        Order CreateOrder();
+        Order CreateOrder(int recipeCount = 1);
     }
 }

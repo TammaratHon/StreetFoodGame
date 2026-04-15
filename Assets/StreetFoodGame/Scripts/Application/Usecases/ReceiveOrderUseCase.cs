@@ -14,9 +14,9 @@ namespace StreetFoodGame.Application.Usecases
             this.orderFactory = orderFactory;
         }
 
-        public Order CreateOrder()
+        public Order CreateOrder(int recipeCount = 1)
         {
-            var order = orderFactory.CreateOrder();
+            var order = orderFactory.CreateOrder(recipeCount);
             return order;
         }
     }

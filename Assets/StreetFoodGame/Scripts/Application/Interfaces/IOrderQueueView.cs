@@ -5,7 +5,7 @@ namespace StreetFoodGame.Application.Interfaces
 {
     public interface IOrderQueueView
     {
-        void AddOrder(Customer customer, List<Recipe> recipes);
+        void AddOrder(Customer customer, List<Food> foods);
         void RemoveOrder(Customer customer);
     }
 }

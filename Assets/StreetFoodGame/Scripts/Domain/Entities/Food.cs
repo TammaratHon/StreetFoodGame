@@ -1,10 +1,10 @@
 namespace StreetFoodGame.Domain.Entities
 {
-    public class Menu
+    public class Food
     {
         public string Name { get; private set; }
 
-        public Menu(string name)
+        public Food(string name)
         {
             Name = name;
         }

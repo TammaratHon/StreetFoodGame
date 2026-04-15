@@ -34,6 +34,7 @@ namespace StreetFoodGame.Root
 
         protected override void Configure(IContainerBuilder builder)
         {
+            builder.RegisterInstance(gameConfig.foodDataList);
             builder.RegisterInstance(gameConfig.recipeDataList);
             builder.RegisterInstance(gameConfig.customerDataList);
             builder.RegisterInstance(audioPlayer);
@@ -65,6 +66,7 @@ namespace StreetFoodGame.Root
             builder.Register<ServeUsecase>(Lifetime.Scoped);
 
             // Scene-specific repositories
+            builder.Register<IFoodRepository, FoodRepository>(Lifetime.Scoped);
             builder.Register<IRecipeRepository, RecipeRepository>(Lifetime.Scoped);
             builder.Register<ICustomerRepository, CustomerRepository>(Lifetime.Scoped);
             builder.Register<IOrderQueueRepository, OrderQueueRepository>(Lifetime.Scoped);

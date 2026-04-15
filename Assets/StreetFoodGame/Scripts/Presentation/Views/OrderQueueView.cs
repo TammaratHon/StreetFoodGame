@@ -26,21 +26,21 @@ namespace StreetFoodGame.Presentation.Views
             this.spriteProvider = spriteProvider;
         }
 
-        public void AddOrder(Customer customer, List<Recipe> recipes)
+        public void AddOrder(Customer customer, List<Food> foods)
         {
             if (availableSlots.Count < maxQueueSize)
             {
                 var slot = Instantiate(orderSlotPrefab, orderQueueContainer);
                 slot.gameObject.SetActive(true);
                 // string[] foodNames = new string[recipes.Count];
-                Dictionary<string, int> foods = new();
+                Dictionary<string, int> foodDict = new();
                 
-                for (int i = 0; i < recipes.Count; i++) {
-                    string foodName = recipes[i].Name;
-                    if (foods.ContainsKey(foodName)) {
-                        foods[foodName]++;
+                for (int i = 0; i < foods.Count; i++) {
+                    string foodName = foods[i].Name;
+                    if (foodDict.ContainsKey(foodName)) {
+                        foodDict[foodName]++;
                     } else {
-                        foods[foodName] = 1;
+                        foodDict[foodName] = 1;
                     }
                 }
 
@@ -48,7 +48,7 @@ namespace StreetFoodGame.Presentation.Views
                 string beginningText = customer.BeginSentences[Random.Range(0, customer.BeginSentences.Length)];
 
                 List<string> middleTexts = new();
-                int middleTextCount = foods.Count - 1;
+                int middleTextCount = foodDict.Count - 1;
                 for (int i = 0; i < middleTextCount; i++) {
                     middleTexts.Add(customer.MiddleSentences[Random.Range(0, customer.MiddleSentences.Length)]);
                 }
@@ -57,12 +57,12 @@ namespace StreetFoodGame.Presentation.Views
 
                 sentencesBuilder.Append(beginningText);
                 sentencesBuilder.Append(" ");
-                sentencesBuilder.Append($"<color=#E53888>{foods.ElementAt(0).Key} {foods.ElementAt(0).Value}</color>");
+                sentencesBuilder.Append($"<color=#E53888>{foodDict.ElementAt(0).Key} {foodDict.ElementAt(0).Value}</color>");
                 
                 for (int i = 0; i < middleTextCount; i++)
                 {
                     string middleText = middleTexts[i];
-                    middleText = middleText.Replace("-", $"<color=#E53888>{foods.ElementAt(i + 1).Key} {foods.ElementAt(i + 1).Value}</color>");
+                    middleText = middleText.Replace("-", $"<color=#E53888>{foodDict.ElementAt(i + 1).Key} {foodDict.ElementAt(i + 1).Value}</color>");
                     sentencesBuilder.Append(" ");
                     sentencesBuilder.Append(middleText);
                     sentencesBuilder.Append(" ");

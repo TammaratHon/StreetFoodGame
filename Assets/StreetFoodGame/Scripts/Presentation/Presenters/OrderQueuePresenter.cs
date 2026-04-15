@@ -1,11 +1,11 @@
 using System;
+using System.Linq;
 
 using StreetFoodGame.Domain.Entities;
 using StreetFoodGame.Domain.Interfaces;
 
 using StreetFoodGame.Application.Interfaces;
 using StreetFoodGame.Application.Usecases;
-using System.Collections.Generic;
 
 namespace StreetFoodGame.Presentation.Presenters
 {
@@ -28,9 +28,9 @@ namespace StreetFoodGame.Presentation.Presenters
 
         public void AddOrderToQueue()
         {
-            var order = receiveOrderUseCase.CreateOrder();
+            var order = receiveOrderUseCase.CreateOrder(3);
             orderRepository.EnqueueOrder(order);
-            orderQueueView.AddOrder(order.Customer, new List<Recipe> { order.Recipe });
+            orderQueueView.AddOrder(order.Customer, order.Foods.ToList());
         }
 
         public void RemoveOrderFromQueue(Order order)

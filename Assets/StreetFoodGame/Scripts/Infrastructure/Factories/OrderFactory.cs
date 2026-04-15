@@ -5,21 +5,27 @@ namespace StreetFoodGame.Infrastructure.Factories
 {
     public class OrderFactory : IOrderFactory
     {
-        private readonly IRecipeRepository recipeRepository;
+        private readonly IFoodRepository foodRepository;
         private readonly ICustomerRepository customerRepository;
 
-        public OrderFactory(IRecipeRepository recipeRepository, ICustomerRepository customerRepository)
+        public OrderFactory(IFoodRepository foodRepository, ICustomerRepository customerRepository)
         {
-            this.recipeRepository = recipeRepository;
+            this.foodRepository = foodRepository;
             this.customerRepository = customerRepository;
         }
 
-        public Order CreateOrder()
+        public Order CreateOrder(int recipeCount = 1)
         {
             Customer customer = customerRepository.GetRandomCustomer();
-            Recipe recipe = recipeRepository.GetRandomRecipe();
+            Food[] foods = new Food[recipeCount];
 
-            return new Order(customer, recipe);
+            foods[0] = foodRepository.GetMainFood();
+            for(int i = 1; i < recipeCount; i++)
+            {
+                foods[i] = foodRepository.GetRandomFoodWithoutMain();
+            }
+
+            return new Order(customer, foods);
         }
     }
 }
