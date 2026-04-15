@@ -108,7 +108,7 @@ namespace StreetFoodGame.Presentation.Presenters
             {
                 cookingStepView.ShowCookingGauge(0, 0.5f).Forget(); // Reset gauge after processing cook count
 
-                bool stepProcessed = cookingUseCase.ProcessCookingStep(out Food cookedMenu);
+                bool stepProcessed = cookingUseCase.ProcessCookingStep(out FoodData cookedMenu);
                 if(stepProcessed)
                 {
                     cookingView.PlayAvatarIdleAnimation();
@@ -118,11 +118,11 @@ namespace StreetFoodGame.Presentation.Presenters
                             if(cookedMenu != null)
                             {
                                 isCooked = true;
-                                serveUsecase.AddFood(cookedMenu.Name);
+                                serveUsecase.AddFood(cookedMenu.name);
                                 cookingStepView.ShowReadyToServeStep();
                                 cookingStepView.ShowCookingIcon(
-                                    cookedMenu.Name,
-                                    spriteProviderService.LoadSpriteInSheet("Graphics2D/SpriteSheets/Somtam_Spritesheet/", cookedMenu.Name)
+                                    cookedMenu.name,
+                                    spriteProviderService.LoadSpriteInSheet("Graphics2D/SpriteSheets/Somtam_Spritesheet/", cookedMenu.name)
                                 );
                             }
                         }

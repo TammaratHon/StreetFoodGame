@@ -50,7 +50,7 @@ namespace StreetFoodGame.Application.Usecases
             return true;
         }
 
-        public bool ProcessCookingStep(out Food menu)
+        public bool ProcessCookingStep(out FoodData menu)
         {
             menu = null;
             if (!HasIngredients()) return false; // No ingredients, cannot process step
@@ -61,7 +61,7 @@ namespace StreetFoodGame.Application.Usecases
             if(matchedRecipe != null && currentStepIndex >= matchedRecipe.IngredientsByStep.Count - 1)
             {
                 currentStepIndex = 0; // Reset for next cooking session
-                menu = new Food(matchedRecipe.Name);
+                menu = new FoodData() { name = matchedRecipe.Name }; // Return the final menu item
             } else
             {
                 currentStepIndex++;

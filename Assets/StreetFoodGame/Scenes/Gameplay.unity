@@ -3166,7 +3166,10 @@ MonoBehaviour:
     TypeName: StreetFoodGame.Root.GameLifetimeScope
   autoRun: 1
   autoInjectGameObjects: []
-  gameConfig: {fileID: 11400000, guid: da4ca2eaa24bd8b49bd1920b9f00592e, type: 2}
+  recipeDataSOList:
+  - {fileID: 11400000, guid: 275b9ae58203e40469e3f093668e1c26, type: 2}
+  - {fileID: 11400000, guid: ea430827485b9e14c8d7da4c6138c19c, type: 2}
+  - {fileID: 11400000, guid: 49dfe94867cc2a64799407def3ea6e22, type: 2}
   audioPlayer: {fileID: 714593390}
   audioClips:
   - id: 1

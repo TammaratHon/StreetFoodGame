@@ -26,7 +26,7 @@ namespace StreetFoodGame.Root
     public class GameplayLifetimeScope : LifetimeScope
     {
         [Header("Data")]
-        [SerializeField] private GameConfigSO gameConfig;
+        [SerializeField] private List<RecipeDataSO> recipeDataSOList;
         
         [Header("Audio")]
         [SerializeField] private AudioPlayer audioPlayer;
@@ -34,9 +34,7 @@ namespace StreetFoodGame.Root
 
         protected override void Configure(IContainerBuilder builder)
         {
-            builder.RegisterInstance(gameConfig.foodDataList);
-            builder.RegisterInstance(gameConfig.recipeDataList);
-            builder.RegisterInstance(gameConfig.customerDataList);
+            builder.RegisterInstance(recipeDataSOList);
             builder.RegisterInstance(audioPlayer);
 
             // Convert List<AudioClipWithId> to Dictionary<SoundId, AudioClip>
@@ -64,11 +62,13 @@ namespace StreetFoodGame.Root
             builder.Register<ReceiveOrderUseCase>(Lifetime.Scoped);
             builder.Register<CookingUseCase>(Lifetime.Scoped);
             builder.Register<ServeUsecase>(Lifetime.Scoped);
+            builder.Register<CustomerSentenceGenerateUsecase>(Lifetime.Scoped);
 
             // Scene-specific repositories
-            builder.Register<IFoodRepository, FoodRepository>(Lifetime.Scoped);
+            builder.Register<IFoodDataRepository, FoodDataRepository>(Lifetime.Scoped);
+            builder.Register<ICustomerFlavorTextDataRepository, CustomerFlavorTextDataRepository>(Lifetime.Scoped);
+            builder.Register<ICustomerOrderDataRepository, CustomerOrderDataRepository>(Lifetime.Scoped);
             builder.Register<IRecipeRepository, RecipeRepository>(Lifetime.Scoped);
-            builder.Register<ICustomerRepository, CustomerRepository>(Lifetime.Scoped);
             builder.Register<IOrderQueueRepository, OrderQueueRepository>(Lifetime.Scoped);
 
             builder.Register<CookingPresenter>(Lifetime.Scoped);

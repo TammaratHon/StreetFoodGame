@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7280fa4a294d0449f479b043d306e2, type: 3}
   m_Name: SomtamCrab
   m_EditorClassIdentifier: 
-  foodItemName: "\u0E2A\u0E49\u0E21\u0E15\u0E33\u0E1B\u0E39"
+  foodItemName: SomtamCrab
   ingredientBySteps:
   - ingredients:
     - {fileID: 11400000, guid: d776934370dc785429b204be1db3e166, type: 2}

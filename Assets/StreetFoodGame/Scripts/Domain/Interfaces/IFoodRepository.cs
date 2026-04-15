@@ -2,9 +2,9 @@ using StreetFoodGame.Domain.Entities;
 
 namespace StreetFoodGame.Domain.Interfaces
 {
-    public interface IFoodRepository
+    public interface IFoodDataRepository
     {
-        Food GetRandomFoodWithoutMain();
-        Food GetMainFood();
+        FoodData GetRandomFoodWithoutMain();
+        FoodData GetMainFood();
     }
 }

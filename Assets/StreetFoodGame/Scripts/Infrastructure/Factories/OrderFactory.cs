@@ -1,14 +1,15 @@
 using StreetFoodGame.Domain.Interfaces;
 using StreetFoodGame.Domain.Entities;
+using UnityEngine;
 
 namespace StreetFoodGame.Infrastructure.Factories
 {
     public class OrderFactory : IOrderFactory
     {
-        private readonly IFoodRepository foodRepository;
-        private readonly ICustomerRepository customerRepository;
+        private readonly IFoodDataRepository foodRepository;
+        private readonly ICustomerOrderDataRepository customerRepository;
 
-        public OrderFactory(IFoodRepository foodRepository, ICustomerRepository customerRepository)
+        public OrderFactory(IFoodDataRepository foodRepository, ICustomerOrderDataRepository customerRepository)
         {
             this.foodRepository = foodRepository;
             this.customerRepository = customerRepository;
@@ -16,8 +17,8 @@ namespace StreetFoodGame.Infrastructure.Factories
 
         public Order CreateOrder(int recipeCount = 1)
         {
-            Customer customer = customerRepository.GetRandomCustomer();
-            Food[] foods = new Food[recipeCount];
+            Customer customer = GetRandomCustomer();
+            FoodData[] foods = new FoodData[recipeCount];
 
             foods[0] = foodRepository.GetMainFood();
             for(int i = 1; i < recipeCount; i++)
@@ -26,6 +27,13 @@ namespace StreetFoodGame.Infrastructure.Factories
             }
 
             return new Order(customer, foods);
+        }
+
+        private Customer GetRandomCustomer()
+        {
+            int customerCount = customerRepository.GetAllCustomerOrders().Count;
+            var customerData = customerRepository.GetAllCustomerOrders()[Random.Range(0, customerCount)];
+            return new Customer(customerData.key);
         }
     }
 }

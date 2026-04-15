@@ -1,0 +1,322 @@
+[
+    {
+        "key" : "customer1",
+        "name" : "เด็กหญิงมัดแกละ",
+        "beginning_sentence" : [
+            "พี่คะหนูขอสั่งเป็น (Menu)",
+            "พี่คนขายคะ หนูเอา (Menu)",
+            "พี่ขา วันนี้หนูขอ (Menu)"
+        ],
+        "middle_sentence" : [
+            "(Menu)",
+            "แล้วก็ (Menu)",
+            "(Menu) ด้วยค่ะ",
+            "แล้วก็เอาเป็น (Menu)"
+        ],
+        "end_sentence" : [
+            "นะคะ",
+            "ค่ะ",
+            "นะคะพี่"
+        ],
+        "food" : {
+            "main" : [
+                {
+                    "key" : "somtam_thai",
+                    "amount_min" : 1,
+                    "amount_max" : 1
+                }
+            ],
+            "carb" : [
+                {
+                    "key" : "sticky_rice",
+                    "amount_min" : 1,
+                    "amount_max" : 1
+                },
+                {
+                    "key" : "khanomjeen",
+                    "amount_min" : 1,
+                    "amount_max" : 1
+                }
+            ],
+            "grilled" : [
+                {
+                    "key" : "grilled_chicken",
+                    "amount_min" : 1,
+                    "amount_max" : 1
+                },
+                {
+                    "key" : "grilled_pork",
+                    "amount_min" : 1,
+                    "amount_max" : 1
+                }
+            ]
+        }
+    },
+    {
+        "key" : "customer2",
+        "name" : "นักศึกษาหญิง",
+        "beginning_sentence" : [
+            "พี่ปื๊ด วันนี้หนูเอา (Menu)",
+            "เอา (Menu)",
+            "หิวมากเลยยยย หนูเอา (Menu)"
+        ],
+        "middle_sentence" : [
+            "(Menu)",
+            "แล้วก็ (Menu)",
+            "เอา (Menu) ด้วยนะคะ",
+            "แล้วก็เอาเป็น (Menu)"
+        ],
+        "end_sentence" : [
+            "ค่ะ",
+            "ขอแซ่บ ๆ เลยนะคะ",
+            "ค่ะพี่"
+        ],
+        "food" : {
+            "main" : [
+                {
+                    "key" : "somtam_thai",
+                    "amount_min" : 1,
+                    "amount_max" : 1
+                },
+                {
+                    "key" : "somtam_crab",
+                    "amount_min" : 1,
+                    "amount_max" : 1
+                },
+                {
+                    "key" : "somtam_fish",
+                    "amount_min" : 1,
+                    "amount_max" : 1
+                }
+            ],
+            "carb" : [
+                {
+                    "key" : "sticky_rice",
+                    "amount_min" : 1,
+                    "amount_max" : 1
+                },
+                {
+                    "key" : "khanomjeen",
+                    "amount_min" : 1,
+                    "amount_max" : 1
+                }
+            ],
+            "grilled" : [
+                {
+                    "key" : "grilled_chicken",
+                    "amount_min" : 1,
+                    "amount_max" : 2
+                },
+                {
+                    "key" : "grilled_pork",
+                    "amount_min" : 1,
+                    "amount_max" : 3
+                },
+                {
+                    "key" : "grilled_fish",
+                    "amount_min" : 1,
+                    "amount_max" : 2
+                }
+            ]
+        }
+    },
+    {
+        "key" : "customer3",
+        "name" : "พนักงานออฟฟิศชาย",
+        "beginning_sentence" : [
+            "เฮีย ผมเอาเหมือนเดิม (Menu)",
+            "เฮียปื๊ด วันนี้อยากกิน (Menu)",
+            "ผมเอา (Menu)"
+        ],
+        "middle_sentence" : [
+            "(Menu)",
+            "แล้วก็ (Menu)",
+            "(Menu) ด้วย",
+            "แล้วก็เอาเป็น (Menu)"
+        ],
+        "end_sentence" : [
+            "ครับ",
+            "กลับบ้านครับ",
+            "นะเฮีย"
+        ],
+        "food" : {
+            "main" : [
+                {
+                    "key" : "somtam_thai",
+                    "amount_min" : 1,
+                    "amount_max" : 1
+                },
+                {
+                    "key" : "somtam_crab",
+                    "amount_min" : 1,
+                    "amount_max" : 1
+                },
+                {
+                    "key" : "somtam_fish",
+                    "amount_min" : 1,
+                    "amount_max" : 1
+                }
+            ],
+            "carb" : [
+                {
+                    "key" : "sticky_rice",
+                    "amount_min" : 1,
+                    "amount_max" : 2
+                },
+                {
+                    "key" : "khanomjeen",
+                    "amount_min" : 1,
+                    "amount_max" : 1
+                }
+            ],
+            "grilled" : [
+                {
+                    "key" : "grilled_chicken",
+                    "amount_min" : 1,
+                    "amount_max" : 3
+                },
+                {
+                    "key" : "grilled_pork",
+                    "amount_min" : 1,
+                    "amount_max" : 2
+                },
+                {
+                    "key" : "grilled_fish",
+                    "amount_min" : 1,
+                    "amount_max" : 2
+                }
+            ]
+        }
+    },
+    {
+        "key" : "customer4",
+        "name" : "ป้าแม่บ้าน",
+        "beginning_sentence" : [
+            "พ่อค้า แม่เอา (Menu)",
+            "พ่อหนุ่ม ลูกป้าฝากซื้อ (Menu)",
+            "พ่อค้าจ๋า พี่ขอ (Menu)"
+        ],
+        "middle_sentence" : [
+            "(Menu)",
+            "กับ (Menu)",
+            "แล้วก็ (Menu)",
+            "อ้อ เอา (Menu) ด้วย"
+        ],
+        "end_sentence" : [
+            "จ้า",
+            "ขออร่อย ๆ เลยนะจ๊ะ",
+            "นะจ๊ะ"
+        ],
+        "food" : {
+            "main" : [
+                {
+                    "key" : "somtam_thai",
+                    "amount_min" : 1,
+                    "amount_max" : 1
+                },
+                {
+                    "key" : "somtam_crab",
+                    "amount_min" : 1,
+                    "amount_max" : 1
+                },
+                {
+                    "key" : "somtam_fish",
+                    "amount_min" : 1,
+                    "amount_max" : 1
+                }
+            ],
+            "carb" : [
+                {
+                    "key" : "sticky_rice",
+                    "amount_min" : 1,
+                    "amount_max" : 1
+                },
+                {
+                    "key" : "khanomjeen",
+                    "amount_min" : 1,
+                    "amount_max" : 2
+                }
+            ],
+            "grilled" : [
+                {
+                    "key" : "grilled_chicken",
+                    "amount_min" : 1,
+                    "amount_max" : 2
+                },
+                {
+                    "key" : "grilled_pork",
+                    "amount_min" : 1,
+                    "amount_max" : 2
+                },
+                {
+                    "key" : "grilled_fish",
+                    "amount_min" : 1,
+                    "amount_max" : 3
+                }
+            ]
+        }
+    },
+    {
+        "key" : "customer5",
+        "name" : "ฝรั่งชาย",
+        "beginning_sentence" : [
+            "ซาหวักดีขาบ พ๋มขอ (Menu)",
+            "ไอว้อน (Menu)",
+            "พ๋มหยักกิ๋น (Menu)"
+        ],
+        "middle_sentence" : [
+            "(Menu)",
+            "แอนด์ (Menu)",
+            "เอา (Menu) ด๋วย",
+            "แลวก๋อ (Menu)"
+        ],
+        "end_sentence" : [
+            "นะขาบ",
+            "ขอบคุณขาบ",
+            "ขรับผ๋ม แต๊งกิ้ว"
+        ],
+        "food" : {
+            "main" : [
+                {
+                    "key" : "somtam_thai",
+                    "amount_min" : 1,
+                    "amount_max" : 1
+                },
+                {
+                    "key" : "somtam_crab",
+                    "amount_min" : 1,
+                    "amount_max" : 1
+                }
+            ],
+            "carb" : [
+                {
+                    "key" : "sticky_rice",
+                    "amount_min" : 1,
+                    "amount_max" : 2
+                },
+                {
+                    "key" : "khanomjeen",
+                    "amount_min" : 1,
+                    "amount_max" : 2
+                }
+            ],
+            "grilled" : [
+                {
+                    "key" : "grilled_chicken",
+                    "amount_min" : 1,
+                    "amount_max" : 2
+                },
+                {
+                    "key" : "grilled_pork",
+                    "amount_min" : 1,
+                    "amount_max" : 2
+                },
+                {
+                    "key" : "grilled_fish",
+                    "amount_min" : 1,
+                    "amount_max" : 1
+                }
+            ]
+        }
+    }
+]

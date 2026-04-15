@@ -1,12 +1,9 @@
+using System.Collections.Generic;
 using UnityEngine;
+using VContainer;
 using StreetFoodGame.Domain.Entities;
 using StreetFoodGame.Application.Interfaces;
-using System.Collections.Generic;
-using TMPro;
-using System.Text;
-using VContainer;
 using StreetFoodGame.Domain.Enums;
-using System.Linq;
 
 namespace StreetFoodGame.Presentation.Views
 {
@@ -26,51 +23,14 @@ namespace StreetFoodGame.Presentation.Views
             this.spriteProvider = spriteProvider;
         }
 
-        public void AddOrder(Customer customer, List<Food> foods)
+        public void AddOrder(Customer customer, string sentence)
         {
             if (availableSlots.Count < maxQueueSize)
             {
                 var slot = Instantiate(orderSlotPrefab, orderQueueContainer);
                 slot.gameObject.SetActive(true);
-                // string[] foodNames = new string[recipes.Count];
-                Dictionary<string, int> foodDict = new();
                 
-                for (int i = 0; i < foods.Count; i++) {
-                    string foodName = foods[i].Name;
-                    if (foodDict.ContainsKey(foodName)) {
-                        foodDict[foodName]++;
-                    } else {
-                        foodDict[foodName] = 1;
-                    }
-                }
-
-                StringBuilder sentencesBuilder = new StringBuilder();
-                string beginningText = customer.BeginSentences[Random.Range(0, customer.BeginSentences.Length)];
-
-                List<string> middleTexts = new();
-                int middleTextCount = foodDict.Count - 1;
-                for (int i = 0; i < middleTextCount; i++) {
-                    middleTexts.Add(customer.MiddleSentences[Random.Range(0, customer.MiddleSentences.Length)]);
-                }
-
-                string endText = customer.EndSentences[Random.Range(0, customer.EndSentences.Length)];
-
-                sentencesBuilder.Append(beginningText);
-                sentencesBuilder.Append(" ");
-                sentencesBuilder.Append($"<color=#E53888>{foodDict.ElementAt(0).Key} {foodDict.ElementAt(0).Value}</color>");
-                
-                for (int i = 0; i < middleTextCount; i++)
-                {
-                    string middleText = middleTexts[i];
-                    middleText = middleText.Replace("-", $"<color=#E53888>{foodDict.ElementAt(i + 1).Key} {foodDict.ElementAt(i + 1).Value}</color>");
-                    sentencesBuilder.Append(" ");
-                    sentencesBuilder.Append(middleText);
-                    sentencesBuilder.Append(" ");
-                }
-
-                sentencesBuilder.Append(endText);
-                
-                slot.SetCustomerOrderText(sentencesBuilder.ToString());
+                slot.SetCustomerSentence(sentence);
                 slot.SetCustomerImage(GetCustomerSprite(customer.Key, customer.Mood));
                 slot.SetCustomerMoodImage(GetCustomerMoodSprite(customer.Mood));
                 slot.SetCustomerFlavorText("");
@@ -97,6 +57,8 @@ namespace StreetFoodGame.Presentation.Views
                 CustomerMood.Angry => "Red",
                 _ => ""
             };
+
+            customerKey = char.ToUpper(customerKey[0]) + customerKey.Substring(1);
 
             return (Sprite)spriteProvider.LoadSpriteInSheet(
                 "Graphics2D/SpriteSheets/Customer_Spritesheet",

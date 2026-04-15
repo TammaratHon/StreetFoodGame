@@ -5,23 +5,17 @@ namespace StreetFoodGame.Domain.Entities
     public class Customer
     {
         public string Key { get; private set; }
-        public string[] BeginSentences { get; set; }
-        public string[] MiddleSentences { get; set; }
-        public string[] EndSentences { get; set; }
+        public float WaitingTime { get; set; }
         public CustomerMood Mood { get; set; }
 
         public Customer(
             string key,
-            string[] beginSentences,
-            string[] middleSentences,
-            string[] endSentences,
+            float waitingTime = 0f,
             CustomerMood mood = CustomerMood.Happy
             )
         {
             Key = key;
-            BeginSentences = beginSentences;
-            MiddleSentences = middleSentences;
-            EndSentences = endSentences;
+            WaitingTime = waitingTime;
             Mood = mood;
         }
     }

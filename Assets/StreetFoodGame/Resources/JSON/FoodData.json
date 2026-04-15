@@ -1,0 +1,58 @@
+[
+    {
+        "key" : "somtam_thai",
+        "category" : "main",
+        "name" : "ส้มตำไทย",
+        "unlocked_day" : 1,
+        "price" : 50
+    },
+    {
+        "key" : "somtam_crab",
+        "category" : "main",
+        "name" : "ส้มตำปู",
+        "unlocked_day" : 7,
+        "price" : 50
+    },
+    {
+        "key" : "somtam_fish",
+        "category" : "main",
+        "name" : "ส้มตำปูปลาร้า",
+        "unlocked_day" : 10,
+        "price" : 50
+    },
+    {
+        "key" : "sticky_rice",
+        "category" : "carb",
+        "name" : "ข้าวเหนียว",
+        "unlocked_day" : 3,
+        "price" : 50
+    },
+    {
+        "key" : "khanomjeen",
+        "category" : "carb",
+        "name" : "ขนมจีน",
+        "unlocked_day" : 5,
+        "price" : 50
+    },
+    {
+        "key" : "grilled_chicken",
+        "category" : "grilled",
+        "name" : "ไก่ย่าง",
+        "unlocked_day" : 15,
+        "price" : 50
+    },
+    {
+        "key" : "grilled_pork",
+        "category" : "grilled",
+        "name" : "คอหมูย่าง",
+        "unlocked_day" : 15,
+        "price" : 50
+    },
+    {
+        "key" : "grilled_fish",
+        "category" : "grilled",
+        "name" : "ปลาดุกย่าง",
+        "unlocked_day" : 20,
+        "price" : 50
+    }
+]

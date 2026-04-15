@@ -21,9 +21,9 @@ namespace StreetFoodGame.Presentation.Views
             customerMoodImage.sprite = sprite;
         }
 
-        public void SetCustomerOrderText(string orderText)
+        public void SetCustomerSentence(string sentence)
         {
-            customerOrderText.text = orderText;
+            customerOrderText.text = sentence;
         }
 
         public void SetCustomerFlavorText(string flavorText)
