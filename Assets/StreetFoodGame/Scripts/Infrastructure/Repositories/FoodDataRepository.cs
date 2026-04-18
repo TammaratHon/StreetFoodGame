@@ -60,5 +60,22 @@ namespace StreetFoodGame.Infrastructure.Repositories
             int randomIndex = Random.Range(0, otherFoods.Count);
             return otherFoods[randomIndex];
         }
+
+        public FoodData GetFoodByKey(string key)
+        {
+            var food = mainFoods.Find(f => f.key == key);
+            if (food != null)
+            {
+                return food;
+            }
+
+            food = otherFoods.Find(f => f.key == key);
+            if (food != null)
+            {
+                return food;
+            }
+
+            throw new System.Exception($"Food with key: {key} not found in the repository.");
+        }
     }
 }

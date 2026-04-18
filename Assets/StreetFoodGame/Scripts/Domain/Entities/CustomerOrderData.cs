@@ -23,6 +23,36 @@ namespace StreetFoodGame.Domain.Entities
             public int amount_min;
             public int amount_max;
         }
+
+        public Food GetRandomMainFood(System.Random random)
+        {
+            int mainFoodCount = food.main.Length;
+            if(mainFoodCount == 0)
+            {
+                throw new System.InvalidOperationException($"No main foods available for customer order with key: {key}");
+            }
+            return food.main[random.Next(0, mainFoodCount)];
+        }
+
+        public Food GetRandomCarbFood(System.Random random)
+        {
+            int carbFoodCount = food.carb.Length;
+            if(carbFoodCount == 0)
+            {
+                throw new System.InvalidOperationException($"No carb foods available for customer order with key: {key}");
+            }
+            return food.carb[random.Next(0, carbFoodCount)];
+        }
+
+        public Food GetRandomGrilledFood(System.Random random)
+        {
+            int grilledFoodCount = food.grilled.Length;
+            if(grilledFoodCount == 0)
+            {
+                throw new System.InvalidOperationException($"No grilled foods available for customer order with key: {key}");
+            }
+            return food.grilled[random.Next(0, grilledFoodCount)];
+        }
     }
 
 }

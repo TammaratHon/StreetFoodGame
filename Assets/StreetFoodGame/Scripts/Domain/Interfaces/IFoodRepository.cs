@@ -6,5 +6,6 @@ namespace StreetFoodGame.Domain.Interfaces
     {
         FoodData GetRandomFoodWithoutMain();
         FoodData GetMainFood();
+        FoodData GetFoodByKey(string key);
     }
 }

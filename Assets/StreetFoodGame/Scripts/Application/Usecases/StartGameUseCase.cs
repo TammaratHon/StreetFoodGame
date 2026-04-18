@@ -2,19 +2,19 @@ namespace StreetFoodGame.Application.Usecases
 {
     public class StartGameUseCase
     {
-        private readonly ReceiveOrderUseCase receiveOrderUseCase;
+        private readonly CustomerOrderUsecase receiveOrderUseCase;
 
-        public StartGameUseCase(ReceiveOrderUseCase receiveOrderUseCase)
+        public StartGameUseCase(CustomerOrderUsecase receiveOrderUseCase)
         {
             this.receiveOrderUseCase = receiveOrderUseCase;
         }
 
         public void Execute()
         {
-            for(int i = 0; i < 3; i++)
-            {
-                receiveOrderUseCase.CreateOrder();
-            }
+            // for(int i = 0; i < 3; i++)
+            // {
+            //     receiveOrderUseCase.CreateOrder();
+            // }
         }
     }
 }

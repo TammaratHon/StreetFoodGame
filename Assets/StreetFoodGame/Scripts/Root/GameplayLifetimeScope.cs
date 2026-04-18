@@ -59,7 +59,7 @@ namespace StreetFoodGame.Root
 
             // Scene-specific use cases
             builder.Register<StartGameUseCase>(Lifetime.Scoped);
-            builder.Register<ReceiveOrderUseCase>(Lifetime.Scoped);
+            builder.Register<CustomerOrderUsecase>(Lifetime.Scoped);
             builder.Register<CookingUseCase>(Lifetime.Scoped);
             builder.Register<ServeUsecase>(Lifetime.Scoped);
             builder.Register<CustomerSentenceGenerateUsecase>(Lifetime.Scoped);

@@ -13,13 +13,13 @@ namespace StreetFoodGame.Presentation.Presenters
     {
         private readonly IOrderQueueView orderQueueView;
         private readonly IOrderQueueRepository orderRepository;
-        private readonly ReceiveOrderUseCase receiveOrderUseCase;
+        private readonly CustomerOrderUsecase receiveOrderUseCase;
         private readonly CustomerSentenceGenerateUsecase customerSentenceGenerateUsecase;
 
         public OrderQueuePresenter(
             IOrderQueueView orderQueueView,
             IOrderQueueRepository orderRepository,
-            ReceiveOrderUseCase receiveOrderUseCase,
+            CustomerOrderUsecase receiveOrderUseCase,
             CustomerSentenceGenerateUsecase customerSentenceGenerateUsecase
         )
         {
@@ -31,10 +31,13 @@ namespace StreetFoodGame.Presentation.Presenters
 
         public void AddOrderToQueue()
         {
-            var order = receiveOrderUseCase.CreateOrder(3);
-            orderRepository.EnqueueOrder(order);
-            string sentence = customerSentenceGenerateUsecase.GenerateSentence(order.Customer, order.Foods.ToList());
-            orderQueueView.AddOrder(order.Customer, sentence);
+            for(int i = 0; i < 3; i++)
+            {
+                var order = receiveOrderUseCase.CreateOrder();
+                orderRepository.EnqueueOrder(order);
+                string sentence = customerSentenceGenerateUsecase.GenerateSentence(order.Customer, order.Foods.ToList());
+                orderQueueView.AddOrder(order.Customer, sentence);
+            }
         }
 
         public void RemoveOrderFromQueue(Order order)
